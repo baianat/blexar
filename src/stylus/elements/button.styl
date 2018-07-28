@@ -1,0 +1,93 @@
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  margin-bottom: $margin
+  padding: $padding ($padding * 1.5)
+  outline: none
+  border-width: $border
+  border-style: solid
+  border-radius: $borderRadius
+  background-clip: border-box
+  vertical-align: top
+  text-align: center
+  text-decoration: none
+  cursor: pointer
+  transition: unit($transition-time, 's') unquote($transition-function)
+  _button-color: $primary $white
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _button-color: $accentColor $textColor
+
+  .icon
+    &:first-child:not(:last-child)
+      margin-{$dir-end}: ($padding * 0.5)
+
+    &:last-child:not(:first-child)
+      margin-{$dir-start}: ($padding * 0.5)
+
+    &:only-child
+      margin: 0 ($padding * -0.5)
+
+  .label
+    margin: ($padding * -1) 0
+
+  &.is-block
+    width: 100%
+
+  &.is-rounded
+    border-width: $border
+    border-radius: 10em
+
+  &.is-clean
+    margin: 0
+    border: 0
+    background-color: transparent
+    color: $black
+    _icon-color: $black
+
+  &.is-link
+    padding-top: 0.3em
+    padding-bottom: 0.3em
+    padding-{$dir-start}: 0
+    padding-{$dir-end}: 0.7em
+    border: 0
+    background-color: transparent
+    color: $link
+    _icon-color: $link
+
+    &:after
+      position: absolute
+      display: block
+      content: ''
+      width: 100%
+      height: 0.15em
+      background-color: $link
+      bottom: 0
+      left: 0
+      right: 0
+
+    &:hover
+    &:active
+    &.is-active
+      color: $link-hover
+
+      &:after
+        background-color: $link-hover
+        height: 0.25em
+
+  &:hover
+    text-decoration: none
+
+  &.is-disabled
+  &[disabled]
+    opacity: 0.8
+    cursor: not-allowed

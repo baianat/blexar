@@ -1,0 +1,16 @@
+$headers = $header-1 $header-2 $header-3 $header-4 $header-5 $header-6
+$header-defaults
+  margin-top: 0
+  margin-bottom: 0.5em
+  line-height: $lineheight
+  font-weight: $weight-super
+
+
+for $header, $n in $headers
+  h{$n + 1}, .h{$n + 1}
+    _unit-min-max(font-size, $header)
+    @extends $header-defaults
+
+p, body
+  @extends $normal
+  margin: 0

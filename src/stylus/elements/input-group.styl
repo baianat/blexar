@@ -1,0 +1,73 @@
+.input-group
+  display: flex
+  margin-bottom: $margin
+
+  >*:not(.inputGroup-label)
+    margin-bottom: 0
+
+  &-label
+    flex: 1
+    margin-bottom: $padding
+    margin-{$dir-end}: $margin
+    white-space: nowrap
+
+  &.has-label
+    flex-wrap: wrap
+
+  &.has-labelInline
+    align-items: center
+
+  &.has-itemAfter
+    .button
+      border-top-{$dir-start}-radius: 0
+      border-bottom-{$dir-start}-radius: 0
+
+    .input
+      border-top-{$dir-end}-radius: 0
+      border-bottom-{$dir-end}-radius: 0
+      border-{$dir-end}: 0
+
+  &.has-itemBefore
+    .input-tag
+      border-top-{$dir-end}-radius: 0
+      border-bottom-{$dir-end}-radius: 0
+
+    .input
+      border-top-{$dir-start}-radius: 0
+      border-bottom-{$dir-start}-radius: 0
+      border-{$dir-start}: 0
+
+
+  // generate all modifiers
+  for color in $modifiers-color
+    &.is-{color}
+      >.button
+        @extends .button.is-{color}
+
+      >.input
+        @extends .input.is-{color}
+
+      >.input-tag
+        @extends .input-tag.is-{color}
+
+  for size in $modifiers-size
+    &.is-{size}
+      >.button
+        @extends .button.is-{size}
+
+      >.input
+        @extends .input.is-{size}
+
+      >.input-tag
+        @extends .input-tag.is-{size}
+
+  for style in $modifiers-style
+    &.is-{style}
+      >.button
+        @extends .button.is-{style} !optional
+
+      >.input
+        @extends .input.is-{style} !optional
+
+      >.input-tag
+        @extends .input-tag.is-{style} !optional

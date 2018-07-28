@@ -1,0 +1,61 @@
+.checkbox
+  margin: $margin 0
+  display: flex
+  align-items: center
+  cursor: pointer
+
+  &-label
+    vertical-align: middle
+
+  &-input
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    width: 1.3em
+    height: 1.3em
+    border: $border solid $gray
+    border-radius: $borderRadius
+    cursor: pointer
+    margin-{$dir-end}: 0.4em
+    outline: none
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+
+    &:focus
+      border-color: $primary
+      box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
+
+    &:checked
+      background-color: $light
+
+      &:after
+        opacity: 1
+
+    &:after
+      display: block
+      opacity: 0
+      width: 0.2em
+      height: 0.5em
+      border: solid $primary
+      border-width: 0 0.13em 0.13em 0
+      content: ''
+      transform: translate3d(0, -0.1em, 0) rotate(45deg)
+
+    ~/.is-disabled &
+    ~/[disabled] &
+      opacity: 0.6
+      cursor: not-allowed
+      pointer-events: none
+
+  &.is-inline
+    display: inline-flex
+    margin-{$dir-end}: 0.8em
+
+  &.is-disabled
+  &[disabled]
+    pointer-events: none
+    cursor: not-allowed
+
+  generateSizes()

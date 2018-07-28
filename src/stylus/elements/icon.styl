@@ -1,0 +1,20 @@
+.icon
+  display: inline
+  vertical-align: middle
+  line-height: inherit
+  font-size: 1em
+  width: 1em
+  height: 1em
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _icon-color: $color
+
+  // generate size modifiers
+  for size in $modifiers-size
+    $size = lookup('$size-' + size)
+    &.is-{size}
+      _unit-min-max: width $size
+      _unit-min-max: height $size

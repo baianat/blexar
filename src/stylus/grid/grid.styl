@@ -1,0 +1,73 @@
+.grid
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  margin-right: $gutter * -1
+  margin-left: $gutter * -1
+  width: auto
+
+  &[class*='is-tablet-'], &[class*='is-desktop-'], &[class*='is-widescreen-'], &[class*='is-ultrawide-']
+    >.column:not([class*='is-'])
+      @extends .column[class*='is-tablet-']
+
+  for $n in (1 .. $columns)
+    &.is-{$n}, &.is-mobile-{$n}
+      >.column:not([class*='is-'])
+        @extends .column.is-{$n}
+
+  +tablet()
+    for $n in (1 .. $columns)
+      &.is-tablet-{$n}
+        >.column:not([class*='is-'])
+          @extends .column.is-tablet-{$n}
+
+  +desktop()
+    for $n in (1 .. $columns)
+      &.is-desktop-{$n}
+        >.column:not([class*='is-'])
+          @extends .column.is-desktop-{$n}
+
+  +widescreen()
+    for $n in (1 .. $columns)
+      &.is-widescreen-{$n}
+        >.column:not([class*='is-'])
+          @extends .column.is-widescreen-{$n}
+
+  +ultrawide()
+    for $n in (1 .. $columns)
+      &.is-ultrawide-{$n}
+        >.column:not([class*='is-'])
+          @extends .column.is-ultrawide-{$n}
+
+  &.is-center
+    justify-content: center
+
+  &.is-end
+    justify-content: flex-end
+
+  &.is-start
+    justify-content: flex-start
+
+  &.is-middle
+    align-items: center
+
+  &.is-top
+    align-items: flex-start
+
+  &.is-bottom
+    align-items: flex-end
+
+  &.is-vertical
+    flex-direction: column
+    align-items: flex-start
+
+  &.is-shrink
+    >.column:not([class*='is-'])
+      flex: 0 0 auto
+
+  &.is-relaxed
+    margin-right: 0
+    margin-left: 0
+
+    >.column
+      padding: 0

@@ -1,0 +1,30 @@
+.textarea
+  display: block
+  margin-bottom: $margin
+  padding: $padding
+  min-width: 100%
+  max-width: 100%
+  outline: none
+  border-width: $border
+  border-style: solid
+  border-radius: $borderRadius
+  text-align: $dir-start
+  line-height: 1.2
+  _textarea-color: $gray $primary
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _textarea-color: $color
+
+  &:disabled, &.is-disabled
+    cursor: not-allowed
+    background: $gray
+    color: $white
+    pointer-events: none
+
+

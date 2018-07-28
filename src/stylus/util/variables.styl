@@ -1,0 +1,84 @@
+/**
+ * Device Breakpoint
+ */
+$mobile ?= 0
+$tablet ?= 768px
+$desktop ?= 991px
+$widescreen ?= 1360px
+$ultrawide ?= 1920px
+
+/**
+ * elemets sizes
+ */
+$size-tiny ?= 12gu9i
+$size-small ?= 14gu9i
+$size-normal ?= 16gu9i
+$size-large ?= 20gu9i
+$size-massive ?= 24gu9i
+
+
+/**
+ * typography
+ */
+$display-1 ?= 68gu9i
+$display-2 ?= 60gu9i
+$display-3 ?= 52gu9i
+$display-4 ?= 48gu9i
+$header-1 ?= 40gu9i
+$header-2 ?= 32gu9i
+$header-3 ?= 28gu9i
+$header-4 ?= $size-massive
+$header-5 ?= $size-large
+$header-6 ?= $size-normal
+
+$font-tiny ?= 12px
+$font-small ?= 14px
+$font ?= 16px
+$font-large ?= 24px
+$font-massive ?= 30px
+$lineheight ?= 1.1875
+$weight-light ?= 200
+$weight-default ?= 400
+$weight-bold ?= 700
+$weight-super ?= 900
+
+
+/**
+ * grid
+ */
+$columns ?= 12
+$dir ?= ltr
+$dir-start ?= setDirection('start')
+$dir-end ?= setDirection('end')
+$gutter = 1.5625vw
+$gutter-full ?= 8vw
+$container-mobile ?= calc(100% - 22px)
+$container-tablet ?= $tablet - (22 * 2)
+$container-desktop ?= $desktop - (22 * 3)
+$container-widescreen ?= $widescreen - (22 * 4)
+$container-ultrawide ?= $ultrawide - (22 * 5)
+
+/*
+ * style
+ */
+$margin ?= 10px
+$padding ?= 0.5em
+$paddingPx ?= 20px
+$modal-spacing ?= 2.5em
+$borderRadius ?= 4px
+$border ?= 1px
+$outline ?= 3px
+$outline-opacity ?= 25%
+
+/**
+ * animation
+ */
+$transition-time ?= 0.4
+$transition-function ?= 'ease-in-out'
+
+/**
+ * modifiers
+ */
+$modifiers-size ?= 'tiny' 'small' 'normal' 'large' 'massive'
+$modifiers-style ?= 'block' 'disabled' 'rounded' 
+$modifiers-color ?= 'primary' 'secondary' 'info' 'success' 'warning' 'danger' 'black' 'white' 'dark' 'light'

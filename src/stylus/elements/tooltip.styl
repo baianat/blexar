@@ -1,0 +1,97 @@
+[tooltip]
+  position: relative
+
+  &:focus
+    outline: none
+
+  &:hover
+    &:before, &:after
+      visibility: visible
+      opacity: 1
+
+  &:before
+    position: absolute
+    top: 0
+    left: 50%
+    z-index: 99999
+    display: block
+    visibility: hidden
+    width: 0
+    height: 0
+    border-width: 7px 7px 0 7px
+    border-style: solid
+    border-color: $black transparent transparent transparent
+    content: ''
+    opacity: 0
+    transition: 0.4s
+    transform: translateX(-50%) translateY(-100%)
+    user-select: none
+
+  &:after
+    position: absolute
+    top: 0
+    left: 50%
+    z-index: 99999
+    display: block
+    visibility: hidden
+    padding: $padding
+    border-radius: $borderRadius
+    background-color: $black
+    color: $white
+    content: attr(tooltip)
+    white-space: nowrap
+    opacity: 0
+    transition: 0.4s
+    transform: translateX(-50%) translateY(-100%) translateY(-7px)
+    user-select: none
+    @extends $small
+
+[tooltip-position='bottom']
+  &:before
+    top: auto
+    top: initial
+    bottom: 0
+    border-width: 0 7px 7px 7px
+    border-color: transparent transparent $black transparent
+    transform: translateX(-50%) translateY(100%)
+
+  &:after
+    top: auto
+    top: initial
+    bottom: 0
+    transform: translateX(-50%) translateY(100%) translateY(7px)
+
+
+[tooltip-position='left']
+  &:before
+    top: 50%
+    left: 0
+    border-width: 7px 0 7px 7px
+    border-color: transparent transparent transparent $black
+    transform: translateX(-100%) translateY(-50%)
+
+  &:after
+    top: 50%
+    left: 0
+    transform: translateX(-100%) translateX(-7px) translateY(-50%)
+
+[tooltip-position='right']
+  &:before
+    top: 50%
+    right: 0
+    left: auto
+    left: initial
+    border-width: 7px 7px 7px 0
+    border-color: transparent $black transparent transparent
+    transform: translateX(100%) translateY(-50%)
+
+  &:after
+    top: 50%
+    right: 0
+    left: auto
+    left: initial
+    transform: translateX(100%) translateX(7px) translateY(-50%)
+
+[tooltip-rounded]
+  &:after
+    border-radius: 10em

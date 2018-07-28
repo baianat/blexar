@@ -1,0 +1,55 @@
+.label
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  margin: 0 2px
+  margin-bottom: $margin
+  padding: $padding
+  min-width: 37px
+  border-radius: $borderRadius
+  color: $black
+  vertical-align: top
+  font-weight: $weight-light 
+  line-height: 1
+  _label-color: $gray $white
+  @extends $small
+
+  img
+    margin: -0.75em
+    height: 2.5em
+    vertical-align: top
+
+  .icon
+    height: 1em
+    width: 1em
+
+  .icon:first-child:not(:last-child), img:first-child:not(:last-child)
+    margin-{$dir-end}: ($padding * 0.5)
+
+  .icon:last-child:not(:first-child), img:last-child:not(:first-child)
+    margin-{$dir-start}: ($padding * 0.5)
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+    &.is-{color}
+      _label-color: $accentColor $textColor
+
+  &.is-rounded
+    border-radius: 10em
+
+  &.is-block
+    display: flex
+
+  &.is-float
+    position: absolute
+    top: 0
+    margin: 0
+    margin-top: $padding * -2
+    {$dir-end}: 0
+    margin-{$dir-end}: $padding * -2

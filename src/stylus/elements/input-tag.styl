@@ -1,0 +1,53 @@
+.input-tag
+  display: inline-flex
+  padding: $padding ($padding * 1.5)
+  border-width: $border
+  border-style: solid
+  border-radius: $borderRadius
+  vertical-align: top
+  text-align: center
+  border-color: $gray
+  background-color: $gray
+  color: $dark
+  _icon-color: $dark
+
+
+  .icon:first-child:not(:last-child)
+    margin-right: ($padding * 0.5)
+
+  .icon:last-child:not(:first-child)
+    margin-left: ($padding * 0.5)
+
+  .icon:only-child
+    margin: 0 ($padding * -0.5)
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      border-color: $color
+      background-color: $color
+      color: $white
+      _icon-color: $white
+
+
+  &.is-rounded
+    border-radius: 10em
+
+  &.is-inverse
+    background-color: transparent
+
+
+  &.is-clean
+    position: relative
+    background-color: white
+    _icon-color: $gray
+    border-{$dir-end}: 0
+    margin-{$dir-end}: -2px
+
+  &.is-disabled
+    opacity: 0.9
+    cursor: not-allowed

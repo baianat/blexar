@@ -1,0 +1,22 @@
+.container
+    width: $container-mobile
+    margin: auto
+    padding-left: $gutter
+    padding-right: $gutter
+
+    +tablet()
+        width: $container-tablet
+
+    +desktop()
+        width: $container-desktop
+
+    +widescreen()
+        width: $container-widescreen
+
+    +ultrawide()
+        width: $container-ultrawide
+
+.container-full
+    width: 100%
+    padding-left: $gutter-full
+    padding-right: $gutter-full

@@ -1,0 +1,34 @@
+.input
+  margin-bottom: $margin
+  padding: $padding ($padding * 1.5)
+  width: 100%
+  outline: none
+  border-width: $border
+  border-style: solid
+  border-radius: $borderRadius
+  -webkit-appearance: none
+  -moz-appearance: none
+  _input-color: $gray $primary
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _input-color: $color
+
+  &.is-block
+    width: 100%
+
+  &.is-rounded
+    border-radius: 10em
+
+  &:disabled,
+  &.is-disabled
+    cursor: not-allowed
+    background: $gray
+
+  &.is-disabled
+    pointer-events: none

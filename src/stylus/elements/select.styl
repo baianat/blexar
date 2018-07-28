@@ -1,0 +1,143 @@
+.select
+  position: relative
+  margin-bottom: $margin
+  margin-bottom: 0
+  padding: $padding ($padding * 1.5)
+  max-width: 100%
+  width: 100%
+  outline: none
+  border-width: $border
+  border-style: solid
+  border-radius: $borderRadius
+  background-color: $white
+  background-image: linear-gradient(45deg, transparent 50%, $black 50%), linear-gradient(135deg, $black 50%, transparent 50%)
+  background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em)
+  background-size: 0.4em 0.4em, 0.4em 0.4em
+  background-repeat: no-repeat
+  text-align: left
+  -webkit-appearance: none
+  -moz-appearance: none
+  _select-color: $gray $primary
+
+  /*
+   * select elments
+   */
+  &-input
+    display: flex
+    padding: 0
+    border: 0
+    outline: none
+    background-color: transparent
+    color: inherit
+    text-align: left
+    font-size: inherit
+    -webkit-appearance: textfield
+    -moz-appearance: none
+
+  select
+    display: none
+
+  &-labels
+    position: absolute
+    top: 0
+    left: 0
+    display: inline-flex
+    flex-wrap: wrap
+    margin-right: 2em
+    padding: 0
+
+  &-label
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    margin: 0.2em
+    padding: 0.4em
+    border-radius: $borderRadius
+    background-color: $black
+    color: $white
+    font-size: 1em
+    line-height: 1
+    _icon-color: currentColor
+
+  &-labelDismiss
+    width: 1em
+    height: 1em
+    color: currentColor
+
+    &:hover
+      fill: $gray
+
+  &-menu
+    position: absolute
+    top: 100%
+    right: 0
+    left: 0
+    z-index: 999
+    margin: 0 (- $border)
+    border-width: 0 $border $border $border
+    border-style: solid
+    border-color: inherit
+    border-radius: 0 0 $borderRadius $borderRadius
+    background: $white
+    font-size: inherit
+
+  &-list
+    overflow: auto
+    margin: 0
+    padding: 0
+    max-height: 40vh
+    list-style: none
+
+  &-item
+    padding: 0
+    width: 100%
+
+    &:not(.is-group)
+      padding: $padding
+      cursor: pointer
+
+  &-childMenu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &-childTitle
+    display: block
+    padding: $padding
+    color: $gray
+
+  &-childItem
+    padding: $padding $padding $padding ($padding * 2)
+    cursor: pointer
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = isLight(color) ? $black : lookup('$' + color)
+    &.is-{color}
+      _select-color: $color
+
+  .is-visible
+    display: block
+
+  .is-hidden
+    display: none
+
+  &.is-rounded
+    border-radius: 10em
+
+  &:disabled,
+  &.is-disabled
+    opacity: 0.7
+    cursor: not-allowed
+
+  &.is-active
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+
+  &.is-disabled
+    opacity: 0.7
+    pointer-events: none

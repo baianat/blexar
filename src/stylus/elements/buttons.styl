@@ -1,0 +1,53 @@
+.buttons
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin-bottom: $margin
+
+  >.label
+    z-index: 2
+    margin: 0 -18.5px
+
+  >.button
+    margin-bottom: 0
+
+    &:not(:first-child):not(:last-child)
+      border-radius: 0
+
+    &:first-child
+      border-top-{$dir-end}-radius: 0
+      border-bottom-{$dir-end}-radius: 0
+
+    &:last-child
+      border-top-{$dir-start}-radius: 0
+      border-bottom-{$dir-start}-radius: 0
+
+  &.is-inverse
+    .button
+      &:not(:first-child):not(:last-child)
+        border-{$dir-start}-width: 0
+
+      &:last-child
+        border-{$dir-start}-width: 0
+
+  // generate all modifiers
+  for color in $modifiers-color
+    &.is-{color}
+      >.button
+        @extends .button.is-{color}
+    &.is-{color}.is-inverse
+      >.button
+        @extends .button.is-{color}.is-inverse
+
+  for size in $modifiers-size
+    &.is-{size}
+      >.button
+        @extends .button.is-{size}
+  for style in $modifiers-style
+    &.is-{style}
+      >.button
+        @extends .button.is-{style}
+
+  &[disabled]
+    >.button
+      @extends .button.is-disabled

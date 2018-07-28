@@ -1,0 +1,88 @@
+.switcher
+  display: inline-flex
+  margin: $margin * 0.5
+  vertical-align: middle
+
+  &-input
+    display: none
+
+    &:checked
+      + .switcher-body
+        background-color: $primary
+        padding-{$dir-start}: 0.5em
+        padding-{$dir-end}: 1.3em
+
+        .switcher-handle
+          {$dir-start}: calc(100% - 1.3em)
+
+        .switcher-true
+          max-width: 40em
+          opacity: 1
+
+        .switcher-false
+          max-width: 0em
+          opacity: 0
+
+    &[disabled]
+      opacity: 0.6
+      cursor: not-allowed
+
+      + .switcher-body
+        opacity: 0.6
+        cursor: not-allowed
+
+  &-body
+    position: relative
+    display: inline-flex
+    padding: 0
+    padding-{$dir-start}: 1.3em
+    padding-{$dir-end}: 0.5em
+    min-width: 2.6em
+    height: 1.3em
+    background-color: $black
+    cursor: pointer
+    transition: 0.3s
+    justify-content: center
+    align-items: center
+    color: $white
+    user-select: none
+
+    p
+      font-size: 0.8em
+
+  &-true
+    max-width: 0em
+    opacity: 0
+
+  &-false
+    max-width: 40em
+    opacity: 1
+
+  &-handle
+    position: absolute
+    {$dir-start}: 0
+    margin: 0.25em
+    top: 0
+    display: block
+    width: 0.8em
+    height: 0.8em
+    background-color: $white
+    content: ''
+    transition: 0.3s
+
+    &.is-dragging
+      transition: 0
+
+  &.is-rounded
+    .switcher-handle, .switcher-body
+      border-radius: 100em
+
+  &.is-disabled, &[disabled]
+    cursor: not-allowed
+    pointer-events: none
+    opacity: 0.6
+
+    .switcher-input
+      cursor: not-allowed
+
+  generateSizes()

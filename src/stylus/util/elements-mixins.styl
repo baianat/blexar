@@ -1,0 +1,78 @@
+/**
+ * styling mixins
+ */
+_icon-color(color)
+  fill: color
+  stroke-width: 0
+
+_button-color(accent, text)
+  border-color: accent
+  background-color:  accent
+  color: text
+  _icon-color:  text
+  &.is-inverse
+    background-color: transparent
+    color: accent
+    _icon-color: accent
+  &:hover
+  &:active
+  &.is-active
+    border-color: darken(accent, 15%)
+    background-color: darken(accent, 15%)
+    color: text
+    _icon-color: text
+  &:focus
+    box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
+
+  &[disabled]
+    border-color: accent
+    background-color:  accent
+    color: text
+    _icon-color:  text
+  
+_textarea-color(primary, secondary = primary)
+  border-color: primary 
+  &:focus
+    border-color: darken(secondary, 15%)
+    box-shadow: 0 0 0 $outline alpha(secondary, $outline-opacity)
+
+_input-color(primary, secondary = primary)
+  border-color: primary 
+  &:focus
+    border-color: darken(secondary, 15%)
+    box-shadow: 0 0 0 $outline alpha(secondary, $outline-opacity)
+
+_select-color(primary, secondary = primary)
+  border-color: primary
+  background-image: linear-gradient(45deg, transparent 50%, primary 50%), linear-gradient(135deg, primary 50%, transparent 50%)
+  color: secondary
+  .select-label,
+  .select-item.is-selected,
+  .select-childItem.is-selected
+    background-color: secondary
+    color: $white
+  .select-item:not(.is-group):hover,
+  .select-childItem:hover
+    background-color: darken(secondary, 15%)
+    color: $white
+  &:focus
+    border-color: darken(primary, 15%)
+    box-shadow: 0 0 0 $outline alpha(primary, $outline-opacity)
+
+
+_modal-color(accent, textColor)
+  background-color: lighten(accent, 90%)
+  color: textColor
+  _icon-color: textColor
+  &.is-outline
+    border-color: accent
+    color: accent
+    _icon-color: accent
+  &:focus
+    border-color: darken(accent, 15%)
+    box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
+
+_label-color(accent, textColor)
+  background-color: accent
+  color: textColor
+  _icon-color: textColor

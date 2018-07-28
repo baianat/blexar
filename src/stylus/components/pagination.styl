@@ -1,0 +1,40 @@
+.pagination
+  display: flex
+  align-items: top
+  margin: $margin 0
+  flex-wrap: wrap
+
+  &-item, &-next, &-prev, &-first, &-last
+    position: relative
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    width: 2em
+    height: 2em
+    outline-width: 0
+    outline-offset: 0
+    border: none
+    text-decoration: none
+    cursor: pointer
+    background: $white
+    font-size: inherit
+    _icon-color: $black
+    @extends $normal
+
+    &.is-active, &:active, &:hover:not(.is-disabled)
+      color: $primary
+      _icon-color: $primary
+
+    &.is-disabled
+      border-color: $gray
+      color: $gray
+      _icon-color: $gray
+
+    &:focus
+      outline-color: 0
+
+    .icon
+      width: 1.4em
+      height: 1.4em
+
+  generateSizes()

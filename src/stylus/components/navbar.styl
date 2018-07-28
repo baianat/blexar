@@ -1,0 +1,64 @@
+.navbar
+  display: flex
+  margin: 0
+  padding: 5px 10px
+  width: 100%
+  background-color: $white
+
+  &.is-fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    transition: 0.4s
+
+  &.is-inverse
+    background-color: $black
+
+  &.is-hidden
+    transform: translate3d(0, -100%, 0)
+
+  &-brand, &-start, &-end
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+  &-brand
+    img
+      max-height: 100%
+
+    &.is-white
+      filter: brightness(0) invert(1)
+
+  &-start
+    flex: 1
+
+  &-item
+    display: block
+    padding: $padding ($padding * 2)
+    color: $black
+    text-decoration: none
+    white-space: nowrap
+    cursor: pointer
+    _icon-color: $black
+    @extends $normal
+
+    &.dropdown
+      height: auto
+
+    &:hover, &:focus
+      color: $secondary
+      _icon-color: $secondary
+
+    ~/.is-inverse &
+      color: $white
+      _icon-color: $white
+
+      &:hover, &:focus
+        color: $secondary
+        _icon-color: $secondary
+
+    &.is-active
+      border-bottom: 4px solid $secondary
+      margin-bottom: -4px
+      color: $secondary
