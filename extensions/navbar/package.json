@@ -1,0 +1,19 @@
+{
+  "name": "@baianat/navbar",
+  "version": "0.0.0",
+  "description": "Adaptive navbar that move navbar elements to dropdown menu based on pre-order priorities.",
+  "main": "dist/js/navbar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baianat/base.extensions/tree/master/navbar"
+  },
+  "keywords": [
+    "navbar"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}

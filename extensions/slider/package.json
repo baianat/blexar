@@ -1,0 +1,27 @@
+{
+  "name": "@baianat/slider",
+  "version": "0.0.5",
+  "description": "ES6 range slider with gradient color range",
+  "author": "",
+  "main": "dist/js/slider.js",
+  "module": "dist/js/slider.esm.js",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baianat/base.extensions/tree/master/slider"
+  },
+  "bugs": {
+    "url": "https://github.com/baianat/base.extensions/issues"
+  },
+  "homepage": "https://github.com/baianat/base.extensions/tree/master/slider#readme",
+  "license": "MIT",
+  "dependencies": {
+    "color-fns": "^0.0.4"
+  }
+}

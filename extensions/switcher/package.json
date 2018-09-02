@@ -1,0 +1,11 @@
+{
+  "name": "@baianat/switcher",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/js/switcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

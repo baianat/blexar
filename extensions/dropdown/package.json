@@ -1,0 +1,16 @@
+{
+  "name": "@baianat/dropdown",
+  "version": "0.0.1",
+  "description": "ES6 dropdown menu",
+  "author": "",
+  "main": "dist/js/dropdown.js",
+  "module": "dist/js/dropdown.esm.js",
+  "license": "MIT",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

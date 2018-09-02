@@ -1,0 +1,19 @@
+{
+  "name": "@baianat/table",
+  "version": "0.0.1",
+  "description": "Advanced data table, build from the need of the best user experience.",
+  "main": "dist/js/table.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baianat/base.extensions/tree/master/table"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baianat/base.extensions/issues"
+  },
+  "homepage": "https://github.com/baianat/base.extensions/tree/master/table#readme"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@baianat/modal",
+  "version": "0.0.1",
+  "description": "base.framework modal extension",
+  "main": "dist/js/modal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modal",
+    "es6"
+  ],
+  "author": "",
+  "license": "MIT"
+}

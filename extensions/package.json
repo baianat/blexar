@@ -1,0 +1,15 @@
+{
+  "name": "@blexar/extensions",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "color-fns": "0.0.2"
+  }
+}
