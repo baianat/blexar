@@ -1,11 +1,9 @@
 {
-  "name": "@baianat/switcher",
-  "version": "0.0.1",
+  "name": "@blexar/switcher",
+  "version": "0.0.0",
   "description": "",
-  "main": "dist/js/switcher.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/switcher.js",
+  "module": "dist/switcher.esm.js",
   "author": "",
   "license": "MIT"
 }

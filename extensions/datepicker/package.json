@@ -1,8 +1,12 @@
 {
-  "name": "@baianat/datepicker",
-  "main": "dist/js/datepicker.js",
-  "version": "0.0.1",
-  "dependencies": {
-    "date-fns": "^2.0.0-alpha.7"
-  }
+  "name": "@blexar/datepicker",
+  "main": "dist/datepicker.js",
+  "module": "dist/datepicker.esm.js",
+  "version": "0.0.0",
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
 }

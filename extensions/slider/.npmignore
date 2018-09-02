@@ -1,7 +1,0 @@
-/docs
-/static
-.eslintrc.json
-.gitignore
-yarn.lock
-gulpfile.js
-src
