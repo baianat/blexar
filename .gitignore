@@ -17,5 +17,9 @@ node_modules/
 # macOS folder icon
 Icon/
 
-# dit folder
+# dit folders
 dist
+*/**/dist
+
+# example folder folders
+*/**/index.html
