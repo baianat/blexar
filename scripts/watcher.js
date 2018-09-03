@@ -1,41 +1,25 @@
-const { extensions } = require('./config');
-const { stylusToCSS } = require('./styles');
+const { buildStyles } = require('./styles');
 const { buildScripts } = require('./extensions');
-const fs = require('fs');
 const bs = require('browser-sync').create();
 
-const styleFiles = extensions.map(ext => {
-  return {
-    match: `${ext}/src/stylus/app.styl`,
-    fn (event, file) {
-      const app = fs.readFileSync(file, 'utf8');
-      stylusToCSS(app, ext);
+bs.watch('*/**/*.html').on('change', bs.reload);
+
+bs.watch('*/**/*.styl', function (event, file) {
+    if (event === 'change') {
+      buildStyles();
       bs.reload();
     }
-  };
 });
 
-const scriptFiles = extensions.map(ext => {
-  return {
-    match: `${ext}/src/js/${ext}.js`,
-    fn (event, file) {
-      buildScripts('umd', ext);
-      bs.reload();
-    }
-  };
-});
-
-const htmlFiles = extensions.map(ext => {
-  return `${ext}/index.html`;
+bs.watch('*/**/src/*.js', function (event, file) {
+  if (event === 'change') {
+    const fileName = file.match(/(\w+).js$/)[1];
+    buildScripts('umd', fileName);
+    console.log(fileName);
+    bs.reload();
+  }
 });
 
 bs.init({
-  server: true,
-  files: [
-    ...styleFiles,
-    ...scriptFiles,
-    ...htmlFiles
-  ]
+  server: true
 });
-
-bs.reload();

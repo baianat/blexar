@@ -34,6 +34,6 @@ function stylusToCSS (styl) {
     });
 }
 
-module.exports = { stylusToCSS };
+module.exports = { buildStyles };
 
 buildStyles();

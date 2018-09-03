@@ -9,7 +9,6 @@ module.exports = {
     'dropdown',
     'slider',
     'accordion',
-    'datepicker',
     'modal',
     'navbar',
     'select',
