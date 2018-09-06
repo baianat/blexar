@@ -5,27 +5,20 @@ import isElementClosest from '../../_utils/isElementClosest';
  * modal class
  */
 export default class Dropdown {
-  constructor (selector, menu = null, {
-    menuVisible = 'is-visible',
-    menuHidden = 'is-hidden',
-    elementActive = 'is-active',
-    hideWhenClickOut = false
-  } = {}) {
+  static defaults = {
+    menuVisible: 'is-visible',
+    menuHidden: 'is-hidden',
+    elementActive: 'is-active',
+    hideWhenClickOut: false
+  } 
+  constructor (selector, menu = null, settings) {
     this.el = select(selector);
     this.menu = select(menu);
     this.settings = {
-      menuVisible,
-      menuHidden,
-      elementActive,
-      hideWhenClickOut
+      ...Dropdown.defaults,
+      ...settings
     };
     this.init();
-  }
-
-  static create () {
-    Array.from(document.querySelectorAll('[data-base-dropdown]')).forEach((el) => {
-      new Dropdown(el, document.querySelector(el.dataset.baseDropdown)); // eslint-disable-line
-    });
   }
 
   /**
@@ -50,7 +43,7 @@ export default class Dropdown {
     this.show(event);
   }
 
-  show (event) {
+  show () {
     this.isVisible = true;
     this.menu.classList.add(this.settings.menuVisible);
     this.menu.classList.remove(this.settings.menuHidden);
@@ -82,6 +75,3 @@ export default class Dropdown {
   }
 }
 
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-  Dropdown.create();
-}

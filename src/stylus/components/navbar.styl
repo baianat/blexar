@@ -1,7 +1,7 @@
 .navbar
   display: flex
   margin: 0
-  padding: 5px 10px
+  padding: $padding (2 * $padding)
   width: 100%
   background-color: $white
 
@@ -24,7 +24,8 @@
     align-items: center
 
   &-brand
-    img
+    margin-{$dir-end}: $margin
+    >*
       max-height: 100%
 
     &.is-white
@@ -35,28 +36,31 @@
 
   &-item
     display: block
-    padding: $padding ($padding * 2)
+    padding: $padding (2 * $padding)
     color: $black
     text-decoration: none
     white-space: nowrap
     cursor: pointer
     _icon-color: $black
+    line-height: 1em
     @extends $normal
+    .navbar-item
+      padding: 0
 
     &.dropdown
       height: auto
 
     &:hover, &:focus
-      color: $secondary
-      _icon-color: $secondary
+      color: $primary
+      _icon-color: $primary
 
     ~/.is-inverse &
       color: $white
       _icon-color: $white
 
       &:hover, &:focus
-        color: $secondary
-        _icon-color: $secondary
+        color: $primary
+        _icon-color: $primary
 
     &.is-active
       border-bottom: 4px solid $secondary
