@@ -30,8 +30,8 @@ module.exports = {
     inputOptions: {
       plugins: [
         replace({ __VERSION__: version }),
-        resolve(),
-        babel()
+        babel(),
+        resolve()
       ]
     }
   }

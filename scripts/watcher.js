@@ -15,7 +15,6 @@ bs.watch('*/**/src/*.js', function (event, file) {
   if (event === 'change') {
     const fileName = file.match(/(\w+).js$/)[1];
     buildScripts('umd', fileName);
-    console.log(fileName);
     bs.reload();
   }
 });
