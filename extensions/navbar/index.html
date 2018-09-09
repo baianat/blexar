@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../../dist/blexar.css">
+</head>
+
+<body style="padding: 50px 0 100px;">
+  <div class="container">
+    <header style="padding-bottom: 50px">
+      <h1>Blexar Navbar</h1>
+      <p>A navabar is the main element to navigate across the website</p>
+    </header>
+
+    <div style="resize: horizontal; overflow: auto;">
+      <nav class="navbar" id="navbar">
+        <div class="navbar-brand">
+          <svg viewBox="0 0 257.42 220" style="height: 32px">
+            <path d="M151.1 134.39H0v31.85h151.1v9h106.32v-31.89H151.1zm0 44.8H29.81V211H151.1v9h61.6v-31.85h-61.6v-9zm0-138.38h61.6V9h-61.6V0H29.81v31.86H151.1zm0 44.8h61.6V53.76h-61.6v-9H14.9v31.89h136.2v9zm74.52-31.85h31.8v31.86h-31.8zm-12.92 76.65V98.55h-61.6v-9H29.81v31.86H151.1v9z"></path>
+          </svg>
+        </div>
+
+        <div class="navbar-start" data-nav-items>
+          <a class="navbar-item" data-nav-priority="high">Home</a>
+          <a class="navbar-item" >About</a>
+          <a class="navbar-item" data-nav-priority="medium">Company</a>
+          <a class="navbar-item">Products</a>
+          <div data-nav-priority="low" class="navbar-item dropdown">
+            <a class="dropdown-toggle">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">sub menu 1</a>
+              <a class="dropdown-item">sub menu 2</a>
+            </div>
+          </div>
+          <a class="navbar-item">Even more</a>
+          <a class="navbar-item">The End</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="dropdown is-right" data-nav-dropdown>
+            <a class="navbar-item navbar-toggle">
+              <svg class="icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+              </svg>
+            </a>
+            <div class="dropdown-menu" data-nav-menu></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <script src="dist/navbar.js"></script>
+  <script>
+    let navbar = new Navbar('#navbar');
+  </script>
+</body>
+
+</html>

@@ -20,6 +20,3 @@ Icon/
 # dit folders
 dist
 */**/dist
-
-# example folder folders
-*/**/index.html

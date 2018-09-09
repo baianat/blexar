@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>base</title>
+    <link rel="stylesheet" href="../../dist/blexar.css">
+  </head>
+  <body style="padding: 50px 0 100px;">
+    <div class="container">
+      <header style="padding-bottom: 50px">
+        <h1>Blexar Slider</h1>
+        <p>A slider is the an element to select a value from a range</p>
+      </header>
+      <div class="grid is-12">
+        <div class="column">
+          <h2>Default</h2>
+        </div>
+        <div class="column">
+          <label class="switcher">
+            <input class="switcher-input" type="checkbox"/>
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="column">
+          <h2>With caption</h2>
+        </div>
+        <div class="column">
+          <label class="switcher">
+            <input class="switcher-input" type="checkbox"/>
+            <span class="switcher-body">
+              <span class="switcher-true">True</span>
+              <span class="switcher-false">False</span>
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="column">
+          <h2>Tiny</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-tiny">
+            <input class="switcher-input" type="checkbox" />
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+      
+        <div class="column">
+          <h2>Small</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-small">
+            <input class="switcher-input" type="checkbox" />
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+            
+        <div class="column">
+          <h2>Normal</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-normal">
+            <input class="switcher-input" type="checkbox" />
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="column">
+          <h2>Large</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-large">
+            <input class="switcher-input" type="checkbox" />
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="column">
+          <h2>Massive</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-massive">
+            <input class="switcher-input" type="checkbox" />
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+
+        <div class="column">
+          <h2>Radio buttons</h2>
+        </div>
+        <div class="column">
+          <label class="switcher is-massive">
+            <input class="switcher-input" type="radio" name="testRadio" checked/>
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+          <label class="switcher is-massive">
+            <input class="switcher-input" type="radio" name="testRadio"/>
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+          <label class="switcher is-massive">
+            <input class="switcher-input" type="radio" name="testRadio"/>
+            <span class="switcher-body">
+              <span class="switcher-handle"></span>
+            </span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="dist/switcher.js"></script>
+    <script>
+      Array.from(document.querySelectorAll('.switcher')).forEach(sw => new Switcher(sw));
+    </script>
+</body>
+</html>

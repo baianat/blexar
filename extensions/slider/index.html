@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../dist/blexar.css">
+  <title>Rangeslider</title>
+</head>
+<body style="padding: 50px 0 100px;">
+  <div class="container">
+    <header style="padding-bottom: 50px">
+      <h1>Blexar Slider</h1>
+      <p>A slider is the an element to select a value from a range</p>
+    </header>
+    <div class="grid is-12">
+      <div class="column">
+        <h2>Default</h2>
+      </div>
+      <div class="column">
+        <input type="range" min="-10" max="10" step="1" id="slider-1">
+      </div>
+
+      <div class="column">
+        <h2>Gradient with opacity</h2>
+      </div>
+      <div class="column">
+        <input type="number" name="" id="slider-2">
+      </div>
+
+      <div class="column">
+        <h2>Gradient</h2>
+      </div>
+      <div class="column">
+        <input type="number" name="" id="slider-3">
+      </div>
+
+      <div class="column">
+        <h2>Editable</h2>
+      </div>
+      <div class="column">
+        <input type="number" name="" value="9" id="slider-4">
+      </div>
+
+      <div class="column">
+        <h2>Hue colors</h2>
+      </div>
+      <div class="column">
+        <input type="text" id="slider5">
+      </div>
+      <div class="column">
+        <h2>Multiple handles</h2>
+      </div>
+      <div class="column">
+        <div type="text" id="multiple"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="dist/slider.js"></script>
+  <script type="text/javascript">
+    new Slider('#slider-1');
+    new Slider('#slider-2', {
+      gradient: ['#00E34400', '#00E344'],
+      min: 0,
+      max: 100,
+      value: 60
+    });
+    new Slider('#slider-3', {
+      gradient: ['#0000ff', '#00ff00'],
+      min: 0,
+      max: 10,
+      value: 7
+    });
+    new Slider('#slider-4', {
+      gradient: ['#00f'],
+      editable: true,
+      classes: ['is-inverse'],
+      label: false
+    });
+    new Slider('#slider5', {
+      gradient: [
+        'hsl(0, 100%, 50%)',
+        'hsl(60, 100%, 50%)',
+        'hsl(120, 100%, 50%)',
+        'hsl(180, 100%, 50%)',
+        'hsl(240, 100%, 50%)',
+        'hsl(360, 100%, 50%)'
+      ],
+      min: 0,
+      max: 100,
+      value: 100,
+      colorCode: true
+    });
+
+    function getRandomInt (min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    function getRandomColor () {
+      return `rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)})`
+    }
+
+    new Slider('#multiple', {
+      handles: [0, 100],
+      min: 0,
+      max: 100,
+      trackSlide: false,
+      label: false,
+      created($this) {
+        const colors = ['rgb(255, 0, 255)', 'rgb(0, 255, 0)']
+        const dblHandler = (handle) => {
+          if ($this.handles.length <= 2) return;
+          const index = $this.handles.indexOf(handle);
+          $this.removeHandle(index);
+        }
+        $this.track.style.backgroundImage = 'linear-gradient(90deg, rgb(255, 0, 255), rgb(0, 255, 0))';
+        $this.handles.forEach(handle => {
+          handle.addEventListener('dblclick', () => dblHandler(handle));
+        });
+        $this.track.addEventListener('mousedown', (event) => {
+          if (event.target !== $this.track) return;
+          const handle = $this.addHandle($this.getStepValue(event));
+          handle.addEventListener('dblclick', () => dblHandler(handle));
+        });
+        $this.el.addEventListener('change', () => {
+          let cc = $this.percentages.map((val, ind) => `${colors[ind]} ${Math.floor(val * 100)}%`)
+          $this.track.style.backgroundImage = `linear-gradient(90deg, ${
+            $this.percentages.map((val, ind) => `${colors[ind]} ${val * 100}%`)
+          })`;
+        })
+      }
+    });
+  </script>
+</body>
+</html>

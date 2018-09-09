@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blexar Dropdown</title>
+    <link rel="stylesheet" href="../../dist/blexar.css">
+  </head>
+  <body style="padding: 50px 0 100px;">
+    <div class="container">
+      <header style="padding-bottom: 50px">
+        <h1>Blexar Dropdown</h1>
+        <p>A dropdown component groups multiple elements in a menu, that can be toggle visible or not</p>
+      </header>
+      <div class="grid is-12">
+        <div class="column">
+          <h2>Right</h2>
+        </div>
+        <div class="column is-desktop-4">
+          <div class="dropdown is-right">
+            <a class="button is-rounded is-floating is-primary" data-blexar-dropdown="#dropdown1">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu"  id="dropdown1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, blanditiis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <h2>Center</h2>
+        </div>
+        <div class="column is-desktop-4">
+          <div class="dropdown is-center">
+            <a class="button is-rounded is-floating is-primary" data-blexar-dropdown="#dropdown2">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu is-center" id="dropdown2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, blanditiis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <h2>Left</h2>
+        </div>
+        <div class="column is-desktop-4">
+          <div class="dropdown is-left">
+            <a class="button is-rounded is-floating is-primary"  data-blexar-dropdown="#dropdown3">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </a>
+            <div class="dropdown-menu" id="dropdown3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, blanditiis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <h2>Hide when click out</h2>
+        </div>
+        <div class="column is-desktop-4">
+          <div class="dropdown">
+            <a class="button is-rounded is-floating is-primary" id="dropDownButton">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </a>
+            <div class="dropdown-menu" id="dropDownMenu">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, blanditiis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="dist/dropdown.js"></script>
+    <script>
+      Array.from(document.querySelectorAll('[data-blexar-dropdown]')).forEach((el) => {
+      new Dropdown(el, document.querySelector(el.dataset.blexarDropdown));
+      new Dropdown(
+        document.querySelector('#dropDownButton'),
+        document.querySelector('#dropDownMenu'),
+        { hideWhenClickOut: true },
+      );
+    });
+    </script>
+</body>
+</html>
