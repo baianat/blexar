@@ -3,14 +3,15 @@ import select from '../../_utils/select';
 import debounce from '../../_utils/debounce';
 
 class Select {
-  constructor (selector, {
-    data = null,
-    multiple = false
-  } = {}) {
+  static defaults = {
+    data: null,
+    multiple: false
+  }
+  constructor (selector, settings) {
     this.el = select(selector);
     this.settings = {
-      data,
-      multiple
+      ...Select.defaults,
+      ...settings
     }
     this.init();
   }
