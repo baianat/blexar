@@ -1,38 +1,39 @@
 # Accordion
 
-ES6 accordion extension for Base framework.
+Accordion extension for Blexar framework.
 
 ## Getting Started
 
 ### Installation
 
-You can install accordion as part of base.extensions
+You can install accordion as part of all blexar's extensions
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/base.extensions
 ```
 
 If you want the standalone version
 
 ```bash
-npm install @baianat/accordion
+npm install @blexar/accordion
 
 # or using yarn
-yarn add @baianat/accordion
+yarn add @blexar/accordion
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <link rel="stylesheet" href="dist/css/accordion.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/accordion.js"></script>
+    <script type="text/javascript" src="dist/accordion.js"></script>
 </body>
 ```
 
@@ -41,42 +42,28 @@ yarn add @baianat/accordion
 * `.accordion`
   * `.accordion-item`
     * `.accordion-title`
-      * `.accordion-icon`
     * `.accordion-body`
   * `.accordion-item`
-    * ...
+  * ...
 
 ``` html
 <ul class="accordion" id="myAccordion">
   <li class="accordion-item is-active">
-    <a class="accordion-title">
-      <span class="accordion-icon"></span>
-      Title 1
-    </a>
+    <a class="accordion-title">Title 1</a>
     <div class="accordion-body">
       <p> Awesome content! </p>
     </div>
   </li>
 
-  <li class="accordion-item is-active">
-    <a class="accordion-title">
-      <span class="accordion-icon"></span>
-      Title 2
-    </a>
+  <li class="accordion-item">
+    <a class="accordion-title">Title 2</a>
     <div class="accordion-body">
       <p> Awesome content! </p>
     </div>
   </li>
 
-  <li class="accordion-item is-active">
-    <a class="accordion-title">
-      <span class="accordion-icon"></span>
-      Title 3
-    </a>
-    <div class="accordion-body">
-      <p> Awesome content! </p>
-    </div>
-  </li>
+  ...
+
 </ul>
 ```
 
@@ -94,12 +81,6 @@ One last step is to call create new accordion
 
 ```js
   let myAccordion = new Accordion('#myAccordion');
-```
-
-You can use the static method `Accordion.create` to search for all accordions in the page and create a new instant of it.
-
-```js
-  Accordion.create();
 ```
 
 ## License

@@ -1,41 +1,38 @@
 # Switcher
 
-ES6 extension to add a dragging behavior to the Base framework switcher component.
+Switcher extension to add a dragging behavior to the Blexar framework switcher component.
 
 ## Getting Started
 
 ### Installation
 
-You can install switcher as part of base.extensions.
+You can install switcher as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/switcher
+npm install @blexar/switcher
 
-yarn add @baianat/switcher
+yarn add @blexar/switcher
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <!-- if you are using base.framework -->
-  <link rel="stylesheet" href="@baianat/base.framework/dist/css/base.css">
-
-  <!-- if you want only switcher stylesheet -->
-  <link rel="stylesheet" href="@baianat/switcher/dist/css/switcher.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/switcher.js"></script>
+    <script type="text/javascript" src="dist/switcher.js"></script>
 </body>
 ```
 

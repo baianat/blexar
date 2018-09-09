@@ -1,6 +1,6 @@
 # Select
 
-ES6 Select extension for Base framework
+Select extension for Blexar framework
 
 [example](https://baianat.github.io/select/)
 
@@ -8,30 +8,34 @@ ES6 Select extension for Base framework
 
 ### Install
 
-using npm/yarn
+You can install navbar as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/select
+npm install @blexar/extensions
 
-yarn add @baianat/select
+# or using yarn
+yarn add @blexar/base.extensions
+```
+
+If you want the standalone version.
+
+```bash
+npm install @blexar/select
+
+yarn add @blexar/select
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <!-- you should include one of the following stylesheets-->
-
-  <!-- if you use the standalone version -->
-  <link rel="stylesheet" href="dist/css/select.css">
-
-  <!-- if you use base.framework -->
-  <link rel="stylesheet" href="dist/css/base.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
     <!-- include javaScript file -->
-    <script type="text/javascript" src="dist/js/select.js"></script>
+    <script type="text/javascript" src="dist/select.js"></script>
 </body>
 ```
 

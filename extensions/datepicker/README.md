@@ -1,37 +1,38 @@
 # Datepicker(WIP)
 
-ES6 date picker extension for Base framework.
+Datepicker extension for Blexar framework.
 
 ## Getting Started
 
 ### Installation
 
-You can install datepicker as part of base.extensions.
+You can install datepicker as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/base.extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/datepicker
+npm install @blexar/datepicker
 
-yarn add @baianat/datepicker
+yarn add @blexar/datepicker
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <link rel="stylesheet" href="dist/css/datepicker.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/datepicker.js"></script>
+    <script type="text/javascript" src="dist/datepicker.js"></script>
 </body>
 ```
 
@@ -40,7 +41,7 @@ yarn add @baianat/datepicker
 You need an input element to output the date value on it.
 
 ``` html
-<input id="myDate">
+<input id="myDate" class="input datepicker">
 ```
 
 ### Create the Datepicker
@@ -48,12 +49,14 @@ You need an input element to output the date value on it.
 You now need to create a new `Datepicker` instance.
 
 ```js
-const myDate = new Datepicker('#myDate', { settings });
+const myDate = new Datepicker('#myDate'[, settings ]);
 ```
 
 | OPTION | DEFAULT | DESCRIPTION |
 | ------ | ------- | ----------- |
-| `dateFormat` | 'YYYY-MM-DD' | string that represents the output date format |
+| `dateFormat` | 'dd/MM/yyyy' | string that represents the output date format |
+| `days` | ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] | array of days name to display in calender |
+| `dateFormat` | ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] | array of months names to display in months selector |
 
 ## License
 

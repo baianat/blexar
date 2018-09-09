@@ -1,26 +1,26 @@
 # Dropdown
 
-ES6 modal extension for Base framework.
+Modal extension for Blexar framework.
 
 ## Getting Started
 
 ### Installation
 
-You can install modal as part of base.extensions.
+You can install modal as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/modal
+npm install @blexar/modal
 
-yarn add @baianat/modal
+yarn add @blexar/modal
 ```
 
 ### Include necessary files
@@ -72,12 +72,9 @@ yarn add @baianat/modal
 </div>
 ```
 
-Once you include the script file, it will search for an element with `[data-base-modal]` attribute and initialize a new `Modal` instance
-Note: you add `[data-base-modal]` attribute to the button element and its value will serve as a CSS selector for the `.modal` itself
-
 ### JavaScript
 
-If there's no element with `[data-base-modal]` attribute, you have to create a new `Modal` instance manually.
+Note: you can add `[data-base-modal]` attribute to the button element and its value will serve as a CSS selector for the `.modal` itself
 
 ```js
 const newModal = new Modal('#modalSelector', '#buttonSelector');

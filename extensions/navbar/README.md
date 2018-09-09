@@ -1,41 +1,38 @@
 # Navbar
 
-An adaptive navbar, that moves navbar elements to a dropdown menu based on pre-set priorities.
+An adaptive navbar extension for Blexar framework, that moves navbar elements to a dropdown menu based on pre-set priorities.
 
 ## Getting Started
 
 ### Installation
 
-You can install navbar as part of base.extensions.
+You can install navbar as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/base.extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/navbar
+npm install @blexar/navbar
 
-yarn add @baianat/navbar
+yarn add @blexar/navbar
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <!-- if you are using base.framework -->
-  <link rel="stylesheet" href="@baianat/base.framework/dist/css/base.css">
-
-  <!-- if you want only navbar stylesheet -->
-  <link rel="stylesheet" href="@baianat/navbar/dist/css/navbar.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/navbar.js"></script>
+    <script type="text/javascript" src="dist/navbar.js"></script>
 </body>
 ```
 

@@ -1,42 +1,38 @@
 # Table
 
-ES6 advanced data table extension for Base framework.
+Advanced data table extension for Blexar framework.
 
 ## Getting Started
 
 ### Installation
 
-You can install table as part of base.extensions.
+You can install table as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/table
+npm install @blexar/table
 
-yarn add @baianat/table
+yarn add @blexar/table
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <!-- if you are using base.framework -->
-  <link rel="stylesheet" href="@baianat/base.framework/dist/css/base.css">
-
-  <!-- if you want only table stylesheet -->
-  <link rel="stylesheet" href="@baianat/table/dist/css/table.css">
-
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/table.js"></script>
+    <script type="text/javascript" src="dist/table.js"></script>
 </body>
 ```
 

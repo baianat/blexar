@@ -1,38 +1,38 @@
 # Range slider
 
-ES6 range slider with gradient color range.
-ES6 range slider extension with gradient color range for Base framework.
+Range slider extension with gradient color range for Blexar framework.
 
 ## Getting Started
 
 ### Installation
 
-You can install the slider as part of base.extensions.
+You can install slider as part of all blexar's extensions.
 
 ```bash
-npm install @baianat/base.extensions
+npm install @blexar/extensions
 
 # or using yarn
-yarn add @baianat/base.extensions
+yarn add @blexar/extensions
 ```
 
 If you want the standalone version.
 
 ```bash
-npm install @baianat/slider
+npm install @blexar/slider
 
-yarn add @baianat/slider
+yarn add @blexar/slider
 ```
 
 ### Include necessary files
 
 ``` html
 <head>
-  <link rel="stylesheet" href="dist/css/slider.css">
+  <!-- include blexar framework stylesheet -->
+  <link rel="stylesheet" href="dist/css/blexar.css">
 </head>
 <body>
     ...
-    <script type="text/javascript" src="dist/js/slider.js"></script>
+    <script type="text/javascript" src="dist/slider.js"></script>
 </body>
 ```
 
