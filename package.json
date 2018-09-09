@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "color-fns": "^0.0.7",
-    "date-fns": "^1.29.0"
+    "date-fns": "^2.0.0-alpha.16"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",

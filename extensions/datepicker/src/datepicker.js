@@ -1,3 +1,4 @@
+import select from '../../_utils/select'
 import Dropdown from '../../dropdown/src/dropdown';
 import {
   endOfMonth,
@@ -6,43 +7,43 @@ import {
   getMonth,
   format,
   parse,
-  setDate,
   addMonths
-} from 'date-fns';
+} from 'date-fns/esm';
 
 class Datepicker {
-  constructor (el, {
-    dateFormat = 'YYYY-MM-DD'
-  } = {}) {
-    this.el = document.querySelector(el);
+  static defaults = {
+    dateFormat: 'dd/MM/yyyy',
+    days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  };
+
+  constructor (el, settings) {
+    this.el = select(el);
     this.settings = {
-      dateFormat
+      ...Datepicker.defaults,
+      ...settings
     };
     this.init();
   }
 
   init () {
-    // init constants;
-    this.days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     this.currentDate = new Date();
 
     // create datepicker wrapper
     this.wrapper = document.createElement('div');
-    this.calendar = document.createElement('div');
-    this.calendarControl = document.createElement('div');
+    this.dropdownMenu = document.createElement('div');
+    this.datepickerControl = document.createElement('div');
     this.table = document.createElement('table');
     this.yearSelector = document.createElement('input');
     this.monthSelector = document.createElement('select');
 
     this.wrapper.classList.add('dropdown');
-    this.calendar.classList.add('calendar');
-    this.calendarControl.classList.add('calendar-control')
-    this.el.classList.add('datepicker');
-    this.table.classList.add('calendar-table');
+    this.dropdownMenu.classList.add('dropdown-menu');
+    this.datepickerControl.classList.add('datepicker-control')
+    this.table.classList.add('calendar');
 
     // build the calendar nodes structure
-    this.months.forEach((month, index) => {
+    this.settings.months.forEach((month, index) => {
       let option = document.createElement('option');
       option.value = index;
       option.innerHTML = month;
@@ -50,35 +51,53 @@ class Datepicker {
     })
 
     // append the calendar to DOM
-    this.calendarControl.appendChild(this.monthSelector);
-    this.calendarControl.appendChild(this.yearSelector);
-    this.calendar.appendChild(this.calendarControl);
-    this.calendar.appendChild(this.table);
-    this.wrapper.appendChild(this.calendar);
+    this.datepickerControl.appendChild(this.monthSelector);
+    this.datepickerControl.appendChild(this.yearSelector);
+    this.dropdownMenu.appendChild(this.datepickerControl);
+    this.dropdownMenu.appendChild(this.table);
+    this.wrapper.appendChild(this.dropdownMenu);
     this.el.parentNode.insertBefore(this.wrapper, this.el);
     this.wrapper.appendChild(this.el);
 
     // start
-    this.dropdown = new Dropdown(this.el, this.calendar);
-    this.setDate(this.currentDate);
-    this.updateCalendar();
+    this.dropdown = new Dropdown(this.el, this.dropdownMenu);
+    this.update();
     this.initEvents();
   }
 
   initEvents () {
-    this.monthSelector.addEventListener('change', () => {
-      this.currentDate.setMonth(this.monthSelector.value);
-      this.updateTableDate();
-    }, false);
-    this.yearSelector.addEventListener('change', () => {
-      this.currentDate.setYear(this.yearSelector.value);
-      this.updateTableDate();
-    }, false);
-    this.el.addEventListener('change', this.updateCalendar.bind(this), false);
+    this.monthSelector.addEventListener('change', (e) => {
+      this.setMonth(e.target.value);
+      this.update();
+    });
+    this.yearSelector.addEventListener('change', (e) => {
+      this.setYear(e.target.value);
+      this.update();
+    });
+    this.el.addEventListener('change', (e) => {
+      this.setDate(e.target.value);
+      this.update();
+    });
+  }
+  
+  setDay (day) {
+    this.currentDate.setDate(day);
   }
 
-  updateCalendar () {
-    this.currentDate = parse(this.el.value, this.settings.dateFormat, new Date());
+  setYear (year) {
+    this.currentDate.setYear(year);
+  }
+
+  setMonth (month) {
+    this.currentDate.setMonth(month);
+  }
+
+  setDate (date) {
+    this.currentDate = parse(date, this.settings.dateFormat, new Date());
+  }
+
+  update () {
+    this.el.value = this.getFormatedDate(this.currentDate);
     this.updateTableDate();
   }
 
@@ -94,8 +113,8 @@ class Datepicker {
     this.table.innerHTML = '';
 
     let header = document.createElement('tr');
-    for (let i = 0; i < this.days.length; i++) {
-      this._createCell(header, this.days[i], 'th');
+    for (let i = 0; i < 7; i++) {
+      this._createCell(header, this.settings.days[i], 'th');
       this.table.appendChild(header);
     }
 
@@ -106,7 +125,7 @@ class Datepicker {
     for (let rowNumber = 0; rowNumber < 6; rowNumber++) {
       limit = rowNumber > 0 ? lastDayOfTheCurrentMonth : lastDayOfThePreviousMonth;
       let row = document.createElement('tr');
-      for (let i = 0; i < this.days.length; i++) {
+      for (let i = 0; i < this.settings.days.length; i++) {
         if (day > limit) {
           day = 1;
           mode = mode === 'is-previous' ? 'is-current' : 'is-following';
@@ -123,29 +142,32 @@ class Datepicker {
     }
   }
 
-  getCurrentCellDate (cell) {
-    let date = setDate(this.currentDate, cell.innerHTML);
-    let currentMonth = this.currentDate.getMonth();
-    if (cell.classList.contains('is-previous')) date.setMonth(currentMonth - 1);
-    if (cell.classList.contains('is-following')) date.setMonth(currentMonth + 1);
-    cell.classList.add('is-active');
+  handleCellClick (e) {
+    const cell = event.target;
+    const currentMonth = this.currentDate.getMonth();
 
-    return date;
+    if (cell.classList.contains('is-previous')) {
+      this.setMonth(currentMonth - 1);
+    }
+    if (cell.classList.contains('is-following')) {
+      this.setMonth(currentMonth + 1);
+    }
+    this.setDay(cell.innerHTML);
+    this.update();
   }
 
   getFormatedDate (date) {
     return format(date, this.settings.dateFormat);
   }
 
-  setDate (date) {
-    this.el.value = this.getFormatedDate(date);
-    this.el.dispatchEvent(new Event('change'));
-  }
-
-  _createCell (row, data, type, extraClass = [null]) {
+  _createCell (row, data, type, extraClass = null) {
     let cell = document.createElement(type);
-    if (extraClass) cell.classList.add(...extraClass);
-    cell.addEventListener('click', () => this.setDate(this.getCurrentCellDate(cell)));
+    if (extraClass) {
+      cell.classList.add(...extraClass);
+    }
+    if (type === 'td') {
+      cell.addEventListener('click', this.handleCellClick.bind(this));
+    }
     cell.innerHTML = data;
     row.appendChild(cell);
   }
