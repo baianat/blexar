@@ -12,12 +12,6 @@ export default class Modal {
     this.init();
   }
 
-  static create() {
-    Array.from(document.querySelectorAll('[data-base-modal]')).forEach((button) => {
-      new Modal(document.querySelector(button.dataset.baseModal), button);
-    });
-  }
-
   init() {
     this.panel = this.el.querySelector('.modal-panel');
     this.dismiss = this.el.querySelector('.modal-dismiss');
@@ -35,8 +29,4 @@ export default class Modal {
       if (event.target === this.el) hide(this.el);
     }, false);
   }
-}
-
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-  Modal.create();
 }
