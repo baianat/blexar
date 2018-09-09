@@ -17,8 +17,9 @@
     flex: 1
     margin: 0.2em
     width: auto
-    height: 0.2em
+    height: 0.3em
     background: $gray
+    border-radius: $border-radius
     will-change: transfom
 
   &-handle
@@ -28,11 +29,13 @@
     left: 0
     will-change: transform
     color: $black
-    margin: -0.1em 0 0 -0.2em
-    width: 0.4em
-    height: 0.4em
+    margin: -0.25em 0 0 -0.25em
+    width: 0.8em
+    height: 0.8em
     background-color: currentColor
-
+    border-radius: 0.8em
+    box-shadow: 0 1px 6px -2px alpha($black, 20%)
+    border: 2px solid $white
   &-label
     position: absolute
     top: -3em
@@ -69,7 +72,7 @@
     height: 100%
     background-color: $gray
     transform-origin: left top
-
+    
   &:hover,
   &.is-dragging
     .slider-label
