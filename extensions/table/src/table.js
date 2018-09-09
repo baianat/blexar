@@ -7,22 +7,19 @@ import Sortable from './sortable';
 import Paginator from './paginator';
 
 class Table {
-  constructor(el, {
-    fixedHeader = false,
-    pagination = true,
-    sortable = true,
-    editable = false,
-    density = false,
-    perPage = 10
-  } = {}) {
+  static defaults = {
+    fixedHeader: false,
+    pagination: true,
+    sortable: true,
+    editable: false,
+    density: false,
+    perPage: 10
+  }
+  constructor(el, settings) {
     this.el = select(el);
-    this.options = {
-      fixedHeader,
-      pagination,
-      sortable,
-      editable,
-      density,
-      perPage
+    this.settings = {
+      ...Table.defaults,
+      ...settings
     }
     this.init();
   }
@@ -32,16 +29,16 @@ class Table {
    */
   init() {
     this.paginator = new Paginator(this.el, {
-      perPage: this.options.perPage,
-      editable: this.options.editable
+      perPage: this.settings.perPage,
+      editable: this.settings.editable
     });
     this.sortable = new Sortable(this.el, this.paginator);
     this.scroll = window.scrollY;
     this.initWrapper();
-    if (this.options.pagination) this.initPagination();
-    if (this.options.sortable) this.initSortable();
-    if (this.options.density) this.initDensity();
-    if (this.options.fixedHeader) this.initFixedHeader();
+    if (this.settings.pagination) this.initPagination();
+    if (this.settings.sortable) this.initSortable();
+    if (this.settings.density) this.initDensity();
+    if (this.settings.fixedHeader) this.initFixedHeader();
   }
 
   /**
@@ -69,8 +66,13 @@ class Table {
         });
       }
       this.ticking = true;
+    }, {
+      passive: true
     });
-    window.addEventListener('resize', debounce(this.updateHeaderSize.bind(this)));
+    window.addEventListener('resize',
+      debounce(this.updateHeaderSize.bind(this)),
+      { passive: true }
+    );
   }
 
   /**
@@ -201,7 +203,7 @@ class Table {
     this.density[density].classList.add('is-active');
     this.el.classList.remove('is-large', 'is-medium', 'is-small');
     this.el.classList.add(`is-${density}`);
-    if (this.options.fixedHeader) {
+    if (this.settings.fixedHeader) {
       this.updateHeaderSize();
       this.updateHeaderState();
     }
