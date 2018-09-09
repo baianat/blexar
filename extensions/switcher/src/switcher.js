@@ -1,13 +1,9 @@
 import select from '../../_utils/select';
 
 class Switcher {
-  constructor(el) {
+  constructor (el) {
     this.el = select(el);
     this._init();
-  }
-
-  static create() {
-    Array.from(document.querySelectorAll('.switcher')).forEach(sw => new Switcher(sw));
   }
 
   _init() {
@@ -22,7 +18,7 @@ class Switcher {
     this._initEvents();
   }
 
-  _initEvents() {
+  _initEvents () {
     this.body.addEventListener('touchstart', (event) => {
       this.currentX = event.touches[0].clientX;
       this.moved = 0;
@@ -41,7 +37,7 @@ class Switcher {
     this.body.addEventListener('click', (event) => event.preventDefault());
   }
 
-  drag(event) {
+  drag (event) {
     if (event.type === 'mousemove') {
       this.dragValue = (event.clientX - this.currentX);
     }
@@ -61,7 +57,7 @@ class Switcher {
     this.handle.style.transform = `translate3d(${this.dragValue}px, 0, 0)`;
   }
 
-  release(event) {
+  release (event) {
     if (this.moved >= (this.movingRange / 4) || this.moved === 0) {
       this.input.checked = !this.input.checked;
     }
@@ -79,7 +75,3 @@ class Switcher {
 }
 
 export default Switcher;
-
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-  Switcher.create();
-}
