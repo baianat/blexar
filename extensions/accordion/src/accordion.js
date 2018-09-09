@@ -5,8 +5,16 @@ import select from '../../_utils/select';
  * accordion class
  */
 export default class Accordion {
-  constructor(selector) {
+  static defaults = {
+    autoClose: true
+  }
+
+  constructor(selector, settings) {
     this.el = select(selector);
+    this.settings = {
+      ...Accordion.defaults,
+      ...settings
+    }
     this.init();
   }
 
@@ -14,8 +22,9 @@ export default class Accordion {
    * create new rang accordion from element
    */
   init() {
-    this.activeItems = Array.from(this.el.querySelectorAll('.accordion-item.is-active'));
-    this.titles = Array.from(this.el.querySelectorAll(':scope >.accordion-item >.accordion-title'));
+    this.items = Array.from(this.el.querySelectorAll(':scope >.accordion-item'));
+    this.activeItems = this.items.filter(item => item.classList.contains('is-active'));
+    this.titles = this.items.map(item => item.querySelector('.accordion-title'));
     this.titles.forEach((title) => {
       title.addEventListener('click', () => this.update(title), false);
     });
@@ -41,7 +50,7 @@ export default class Accordion {
   collapse(item) {
     this.activeItems.splice(this.activeItems.indexOf(item), 1);
     const body = item.querySelector('.accordion-body');
-    body.style.height = `${body.scrollHeight}px`;
+    body.style.height = `${body.clientHeight}px`;
     async(() => {
       body.style.height = '';
       item.classList.remove('is-active');
@@ -53,24 +62,18 @@ export default class Accordion {
    * @param {HTMLElement} item
    */
   expand(item) {
+    if (this.settings.autoClose) {
+      const temp = this.activeItems.slice(0);
+      temp.forEach(item => this.collapse(item));
+    }
     this.activeItems.push(item);
     const body = item.querySelector('.accordion-body');
     item.classList.add('is-active');
-    const bodyHeight = body.scrollHeight;
+    const bodyHeight = body.clientHeight;
     body.style.height = 0;
+    body.addEventListener('transitionend', () => body.style.height = '');
     async(() => {
       body.style.height = `${bodyHeight}px`;
     })
-    body.addEventListener('transitionend', () => { body.style.height = '' });
-  }
-
-  /**
-   *  automatically create all accordions in the page
-   */
-  static create() {
-    const accordions = Array.from(document.querySelectorAll('.accordion'));
-    accordions.forEach((accordion) => {
-      new Accordion(accordion); // eslint-disable-line
-    });
   }
 }
