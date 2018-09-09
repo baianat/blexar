@@ -16,5 +16,5 @@
   for size in $modifiers-size
     $size = lookup('$size-' + size)
     &.is-{size}
-      _unit-min-max: width $size
-      _unit-min-max: height $size
+      width: $size
+      height: $size
