@@ -8,6 +8,7 @@ module.exports = {
   extensions: [
     'dropdown',
     'slider',
+    'datepicker',
     'accordion',
     'modal',
     'navbar',

@@ -12,7 +12,7 @@ You can install accordion as part of all blexar's extensions
 npm install @blexar/extensions
 
 # or using yarn
-yarn add @blexar/base.extensions
+yarn add @blexar/extensions
 ```
 
 If you want the standalone version

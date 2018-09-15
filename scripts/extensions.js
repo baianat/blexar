@@ -36,14 +36,14 @@ async function buildScripts (format, ext) {
   console.log(chalk.green(`👍  ${fileName}`));
 
   // write the minified code.
-  if (!isProduction && format === 'umd') return;
+  if (!isProduction || format !== 'umd') return;
   filePath = path.join(`extensions/${ext}/dist/`, `${ext}.min.js`);
   fs.writeFileSync(filePath, uglify(code, script.uglifyOptions).code);
 }
 
 extensions.forEach(ext => {
-  buildScripts('umd', ext);
   buildScripts('es', ext);
+  buildScripts('umd', ext);
 });
 
 module.exports = { buildScripts };
