@@ -5,12 +5,14 @@ $header-defaults
   line-height: $lineheight
   font-weight: $weight-super
 
-
 for $header, $n in $headers
   h{$n + 1}, .h{$n + 1}
-    _unit-min-max(font-size, $header)
+    font-size: $header
     @extends $header-defaults
+
+for $n in (1..4)
+  .display-{$n}
+    font-size: lookup('$display-' + $n)
 
 p, body
   @extends $normal
-  margin: 0
