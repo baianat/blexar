@@ -5,18 +5,8 @@
   width: 100%
   background-color: $white
 
-  &.is-fixed
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    transition: 0.4s
-
-  &.is-inverse
-    background-color: $black
-
-  &.is-hidden
-    transform: translate3d(0, -100%, 0)
+  &-logo
+    height: 28px
 
   &-brand, &-start, &-end
     display: flex
@@ -31,9 +21,11 @@
     &.is-white
       filter: brightness(0) invert(1)
 
-  &-start
+  &-start,
+  &-end
     flex: 1
-
+  &-end
+    justify-content: flex-end
   &-item
     display: block
     padding: $padding (2 * $padding)
@@ -66,3 +58,18 @@
       border-bottom: 4px solid $secondary
       margin-bottom: -4px
       color: $secondary
+    &.is-fixed
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      transition: 0.4s
+
+    &.is-inverse
+      background-color: $black
+
+    &.is-hidden
+      transform: translate3d(0, -100%, 0)
+  // reset nested elements
+  .button
+    margin-bottom: 0
