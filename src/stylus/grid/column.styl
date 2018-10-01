@@ -8,16 +8,18 @@
   &[class*='is-widescreen-'],
   &[class*='is-ultrawide-']
     flex: 1 0 100%
-    // we used min-width insted of width
+    // we used min-width with width property
     // to stop FireFox default behavoir
     // when content is bigger than column
     min-width: 100%
+    width: 100%
 
   for $n in (0 .. $columns)
     &.is-{$n},
     &.is-mobile-{$n}
       flex: 0 0 ($n / $columns * 100) %
       min-width: ($n / $columns * 100) %
+      width: ($n / $columns * 100) %
 
     &.is-offset-{$n},
     &.is-offset-mobile-{$n}
@@ -28,6 +30,7 @@
       &.is-tablet-{$n}
         flex: 0 0 ($n / $columns * 100) %
         min-width: ($n / $columns * 100) %
+        width: ($n / $columns * 100) %
 
       &.is-offset-tablet-{$n}
         margin-{$dir-start}: ($n / $columns * 100) %
@@ -37,6 +40,7 @@
       &.is-desktop-{$n}
         flex: 0 0 ($n / $columns * 100) %
         min-width: ($n / $columns * 100) %
+        width: ($n / $columns * 100) %
 
       &.is-offset-desktop-{$n}
         margin-{$dir-start}: ($n / $columns * 100) %
@@ -46,6 +50,7 @@
       &.is-widescreen-{$n}
         flex: 0 0 ($n / $columns * 100) %
         min-width: ($n / $columns * 100) %
+        width: ($n / $columns * 100) %
 
       &.is-offset-widescreen-{$n}
         margin-{$dir-start}: ($n / $columns * 100) %
@@ -55,6 +60,7 @@
       &.is-ultrawide-{$n}
         flex: 0 0 ($n / $columns * 100) %
         min-width: ($n / $columns * 100) %
+        width: ($n / $columns * 100) %
 
       &.is-offset-ultrawide-{$n}
         margin-{$dir-start}: ($n / $columns * 100) %
