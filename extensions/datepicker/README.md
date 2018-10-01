@@ -56,7 +56,7 @@ const myDate = new Datepicker('#myDate'[, settings ]);
 | ------ | ------- | ----------- |
 | `dateFormat` | 'dd/MM/yyyy' | string that represents the output date format |
 | `days` | ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] | array of days name to display in calender |
-| `dateFormat` | ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] | array of months names to display in months selector |
+| `months` | ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] | array of months names to display in months selector |
 
 ## License
 
