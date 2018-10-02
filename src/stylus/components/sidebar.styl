@@ -1,0 +1,46 @@
+.sidebar
+  padding: $padding
+
+  &-label
+    text-transform: uppercase
+    font-weight: light
+    padding: 0.5em 1em
+    @extend $small
+
+  &-list,
+  &-sublist
+    margin: $margin 0
+    list-style: none
+    padding-{$dir-start}: 0.75em
+
+  &-item
+    a
+      display: block
+      border-radius: $border-radius
+      padding: 0.5em 1em
+      color: $black
+      @extend $normal
+      &:hover
+        background-color: alpha($gray, 20%)
+        color: $black
+
+    &.is-active
+      >.sidebar-sublist
+        display: block
+      >a
+        background-color: $primary
+        color: $white
+        &:hover
+          background-color: $primary
+          color: $white
+
+  &-sublist
+    display: none
+    .sidebar-item >a
+      border-left: 1px solid $gray
+      &.is-active
+        border-left: 2px solid $blue
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+        background: transparent
+        color: $primary
