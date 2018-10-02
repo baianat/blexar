@@ -58,18 +58,20 @@
       border-bottom: 4px solid $secondary
       margin-bottom: -4px
       color: $secondary
-    &.is-fixed
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      transition: 0.4s
 
-    &.is-inverse
-      background-color: $black
+  &.is-fixed
+    position: fixed
+    z-index: 9999
+    top: 0
+    left: 0
+    right: 0
+    transition: 0.4s
 
-    &.is-hidden
-      transform: translate3d(0, -100%, 0)
+  &.is-inverse
+    background-color: $black
+
+  &.is-hidden
+    transform: translate3d(0, -100%, 0)
   // reset nested elements
   .button
     margin-bottom: 0
