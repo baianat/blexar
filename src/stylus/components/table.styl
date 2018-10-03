@@ -1,7 +1,7 @@
 .table
   overflow: hidden
   width: 100%
-  border: $border solid $black
+  border: $border solid $gray
   border-spacing: 0
   border-collapse: separate
   border-radius: $border-radius
@@ -14,7 +14,7 @@
 
   th, td
     &:not(:last-child)
-      border-{$dir-end}: $border solid $black
+      border-{$dir-end}: $border solid $gray
 
       +mobile()
         border-right: 0
@@ -27,7 +27,7 @@
     background-color: $white
 
     th
-      border-bottom: $border solid $black
+      border-bottom: $border solid $gray
       padding: ($padding * 2) $padding
       font-weight: bold
 
@@ -38,17 +38,17 @@
     background-color: $white
 
     th
-      border-top: $border solid $black
+      border-top: $border solid $gray
       padding: $padding
 
   tr
     +mobile()
       display: block
-      border-top: $border solid $black
+      border-top: $border solid $gray
 
   td
     padding: $padding
-    border-top: $border solid $black
+    border-top: $border solid $gray
     background-color: $white
 
     +mobile()
