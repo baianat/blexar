@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "CSS framework to establish your favorite websites in mints, with user experience in mind.",
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
-  "main": "blexar.styl",
+  "main": "dist/css/blexar.css",
   "style": "dist/css/blexar.css",
   "scripts": {
     "lint": "eslint ./src --fix",
