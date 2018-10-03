@@ -49,13 +49,13 @@
     list-style: decimal outside
     margin-left: 1em
     margin-top: 1em
-    padding: 0
+    padding-{$dir-start}: 1em
 
   ul
     list-style: disc outside
     margin-left: 1em
     margin-top: 1em
-    padding: 0
+    padding-{$dir-start}: 1em
 
     ul
       list-style-type: circle
@@ -63,6 +63,10 @@
 
       ul
         list-style-type: square
+  code
+    background: $gray-light
+    color: $primary
+    padding: 0.2em
 
   dd
     margin-left: 2em
@@ -92,5 +96,6 @@
 
   sup, sub
     font-size: 75%
-
+  table
+    @extend .table
   generateSizes()
