@@ -10,40 +10,49 @@
     padding: 0.5em 1em
     @extend $small
 
-  &-list,
-  &-sublist
+  &-menu,
+  &-submenu
     margin: $margin 0
     list-style: none
     padding-{$dir-start}: 0.75em
 
+  &-wrapper
+    overflow: hidden
+
+  &-link,
+  &-toggle
+    display: block
+    border-radius: $border-radius
+    padding: 0.5em 1em
+    color: $black
+    background: transparent
+    border: 0
+    width: 100%
+    text-align: left
+    cursor: pointer
+    @extend $normal
+    &:focus,
+    .is-active
+      outline: none
+      background-color: lighten($gray, 30%)
+    &:hover
+      background-color: lighten($gray, 50%)
+
   &-item
-    a
-      display: block
-      border-radius: $border-radius
-      padding: 0.5em 1em
-      color: $black
-      @extend $normal
-      &:hover
-        background-color: alpha($gray, 20%)
-        color: $black
-
     &.is-active
-      >.sidebar-sublist
+      .sidebar-submenu
         display: block
-      >a
-        background-color: $primary
-        color: $white
-        &:hover
-          background-color: $primary
-          color: $white
+      .sidebar-toggle
+        color: $primary
 
-  &-sublist
+  &-submenu
     display: none
-    .sidebar-item >a
+    padding: 0.75em
+    .sidebar-link
       border-left: 1px solid $gray
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
       &.is-active
         border-left: 2px solid $blue
-        border-top-left-radius: 0
-        border-bottom-left-radius: 0
         background: transparent
         color: $primary
