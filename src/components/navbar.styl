@@ -1,12 +1,12 @@
 .navbar
   display: flex
   margin: 0
-  padding: $padding (2 * $padding)
   width: 100%
+  padding: 0 ($padding  * 2)
   background-color: $white
 
   &-logo
-    height: 28px
+    height: 40px
 
   &-brand, &-start, &-end
     display: flex
@@ -15,8 +15,6 @@
 
   &-brand
     margin-{$dir-end}: $margin
-    >*
-      max-height: 100%
 
     &.is-white
       filter: brightness(0) invert(1)
@@ -24,6 +22,7 @@
   &-start,
   &-end
     flex: 1
+    padding: $padding
   &-end
     justify-content: flex-end
   &-item
