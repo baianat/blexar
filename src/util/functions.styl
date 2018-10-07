@@ -2,19 +2,48 @@
  * set the start and end direction based on
  * $dir variables
  */
-setDirection(state)
-  if ($dir == 'ltr')
-    return state == 'start' ? left : right
-
-  return state == 'start' ? right : left
-
+setDirection(state) {
+  if ($dir == 'ltr') {
+    return state == 'start' ? left : right;
+  }
+  return state == 'start' ? right : left;
+}
 
 
 /*
  * check if the color name is a light color
  */
-isLight(color)
-  if (color == 'white' || color == 'light' || color == 'gray' || color == 'secondary')
-    return true
+isLight(color) {
+  if (color == 'white' || color == 'light' || color == 'gray' || color == 'secondary') {
+    return true;
+  }
+  return false;
+}
 
-  return false
+/*
+ * convert values to rem
+ */
+toRem(value) {
+    u = unit(value);
+    if (u is 'px') {
+        return unit(value/16, 'rem');
+    } else {
+        return unit(value, u);
+    }
+}
+
+/*
+ * generate font sizes
+ */
+generateFontSizes() {
+  sizes = ();
+  font = 8;
+  max = 15;
+  ratio = 1.1875;
+  for $n in (1...max) {
+    rem = toRem(unit(font, 'px'));
+    font = (font * ratio);
+    push(sizes, rem);
+  }
+  return sizes;
+}

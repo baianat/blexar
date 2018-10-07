@@ -1,3 +1,42 @@
+$font-size = generateFontSizes()
+
+/**
+ * elemets sizes
+ */
+$size-tiny ?= $font-size[2]
+$size-small ?= $font-size[3]
+$size-normal ?= $font-size[4]
+$size-large ?= $font-size[5]
+$size-massive ?= $font-size[6]
+
+/**
+ * typography
+ */
+$display-1 ?= $font-size[13]
+$display-2 ?= $font-size[12]
+$display-3 ?= $font-size[11]
+$display-4 ?= $font-size[10]
+
+$header-1 ?= $font-size[9]
+$header-2 ?= $font-size[8]
+$header-3 ?= $font-size[7]
+$header-4 ?= $font-size[6]
+$header-5 ?= $font-size[5]
+$header-6 ?= $font-size[4]
+
+$font-tiny ?= $font-size[2]
+$font-small ?= $font-size[3]
+$font-normal ?= $font-size[4]
+$font-large ?= $font-size[5]
+$font-massive ?= $font-size[6]
+
+$lineheight ?= 1.1875
+$font-weight-light ?= 300
+$font-weight-normal ?= 400
+$font-weight-medium ?= 500
+$font-weight-semi-bold ?= 600
+$font-weight-bold ?= 700
+
 /**
  * Device Breakpoint
  */
@@ -8,50 +47,13 @@ $widescreen ?= 1360px
 $ultrawide ?= 1920px
 
 /**
- * elemets sizes
- */
-$size-tiny ?= 12px
-$size-small ?= 14px
-$size-normal ?= 16px
-$size-large ?= 20px
-$size-massive ?= 24px
-
-/**
- * typography
- */
-$display-1 ?= 96px
-$display-2 ?= 88px
-$display-3 ?= 72px
-$display-4 ?= 56px
-
-$header-1 ?= 40px
-$header-2 ?= 32px
-$header-3 ?= 28px
-$header-4 ?= $size-massive
-$header-5 ?= $size-large
-$header-6 ?= $size-normal
-
-$font-tiny ?= $size-tiny
-$font-small ?= $size-small
-$font-normal ?= $size-normal
-$font-large ?= $size-large
-$font-massive ?= $size-massive
-
-$lineheight ?= 1.1875
-$weight-light ?= 200
-$weight-default ?= 400
-$weight-bold ?= 700
-$weight-super ?= 900
-
-
-/**
  * grid
  */
 $columns ?= 12
 $dir ?= ltr
 $dir-start ?= setDirection('start')
 $dir-end ?= setDirection('end')
-$gutter ?= 7.5px
+$gutter ?= toRem(7.5px)
 $gutter-full ?= 8vw
 $container-mobile ?= calc(100% - 22px)
 $container-tablet ?= $tablet - (22 * 2)
@@ -62,7 +64,7 @@ $container-ultrawide ?= $ultrawide - (22 * 5)
 /*
  * style
  */
-$margin ?= 10px
+$margin ?= 0.5em
 $padding ?= 0.5em
 $padding-px ?= 20px
 $modal-spacing ?= 2.5em
