@@ -51,8 +51,8 @@ $ultrawide ?= 1920px
  */
 $columns ?= 12
 $dir ?= ltr
-$dir-start ?= setDirection('start')
-$dir-end ?= setDirection('end')
+$dir-start ?= $dir == 'ltr' ? left : right
+$dir-end ?= $dir == 'ltr' ? right : left
 $gutter ?= toRem(7.5px)
 $gutter-full ?= 8vw
 $container-mobile ?= calc(100% - 22px)
