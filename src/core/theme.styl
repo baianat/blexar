@@ -2,17 +2,20 @@
   background: $primary
   color: $white
 
-*::placeholder
-  color: $gray
-  opacity: 1
+*
+  box-sizing: border-box
+
+::placeholder
+  color: $dark
+  opacity: 0.3
 
   &:focus
     outline: 0
 
-html, input, button
+html
   direction: $dir
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
-  font-weight: $font-weight-default
+  font-weight: $font-weight-normal
 
 a
   color: $link
@@ -25,9 +28,3 @@ a
 img
   max-width: 100%
   height: auto
-
-strong, b
-  font-weight: $weight-super
-
-pre
-  direction: ltr
