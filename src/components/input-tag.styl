@@ -9,6 +9,7 @@
   border-color: $gray
   background-color: $gray
   color: $dark
+  white-space: nowrap
   _icon-color: $dark
 
 
@@ -20,6 +21,9 @@
 
   .icon:only-child
     margin: 0 ($padding * -0.5)
+
+  >*:not(#blexar)
+    margin: 0
 
   // generate size modifiers
   generateSizes()
