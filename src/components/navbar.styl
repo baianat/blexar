@@ -5,6 +5,8 @@
   padding: 0 ($padding  * 2)
   background-color: $white
   font-weight: $font-weight-semi-bold
+  border-bottom: 1px solid $gray
+  @extend $normal
 
   &-logo
     height: 40px
@@ -23,7 +25,6 @@
   &-start,
   &-end
     flex: 1
-    padding: $padding
   &-end
     justify-content: flex-end
   &-item
@@ -34,7 +35,7 @@
     white-space: nowrap
     cursor: pointer
     _icon-color: $black
-    line-height: 1em
+    line-height: 40px
     @extends $normal
     .navbar-item
       padding: 0
