@@ -5,20 +5,22 @@
   padding: 0 ($padding  * 2)
   background-color: $white
   font-weight: $font-weight-semi-bold
-  border-bottom: 1px solid $gray
   @extend $normal
 
-  &-logo
-    height: 40px
 
-  &-brand, &-start, &-end
+  &-brand
     display: flex
-    flex-wrap: wrap
+    align-items: center
+  &-start,
+  &-end
+    display: flex
     align-items: center
 
   &-brand
     margin-{$dir-end}: $margin
-
+    img
+      max-height: 40px
+      display: block
     &.is-white
       filter: brightness(0) invert(1)
 
