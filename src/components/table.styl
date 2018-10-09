@@ -1,69 +1,38 @@
 .table
   overflow: hidden
   width: 100%
-  border: $border solid $gray
   border-spacing: 0
   border-collapse: separate
   border-radius: $border-radius
   color: $black
   text-align: $dir-start
-  @extends $normal
 
   &:not(:last-child)
     margin-bottom: $margin
 
-  th, td
-    &:not(:last-child)
-      border-{$dir-end}: $border solid $gray
-
-      +mobile()
-        border-right: 0
-
-    +mobile()
-      display: block
-      width: 100%
-
   thead
     background-color: $white
-
     th
       border-bottom: $border solid $gray
       padding: ($padding * 2) $padding
-      font-weight: bold
-
-      +mobile()
-        border-bottom: 0
+      font-weight: $font-weight-bold
 
   tfoot
-    background-color: $white
-
     th
       border-top: $border solid $gray
-      padding: $padding
-
-  tr
-    +mobile()
-      display: block
-      border-top: $border solid $gray
+      padding: ($padding * 2) $padding
 
   td
-    padding: $padding
+    padding: ($padding * 2) $padding
     border-top: $border solid $gray
-    background-color: $white
 
-    +mobile()
-      border: 0
+  // generate size modifiers
+  generateSizes()
 
-  &-wrapper
-    position: relative
-    display: table
-    overflow-x: auto
-    margin: $margin auto
-    padding: $padding
-    border: $border solid $white
-    border-radius: $border-radius
-    background-color: $white
-    width: 100%
+  &-responsive
+    display: block;
+    width: 100%;
+    overflow-x: auto;
 
   &-sort
     float: right
@@ -80,15 +49,15 @@
       transform: scaleY(-1)
 
   &.is-striped
-    tr:nth-child(2n)
-      td
-        background-color: $alight
+    tbody tr:nth-of-type(odd)
+      background-color: $gray-light
 
-  &.is-relaxed
-    border: 0
-
-    th, td
-      border-{$dir-end}: 0
+  &.is-bordered
+    border: $border solid $gray
+    th,
+    td
+      &:not(:last-child)
+        border-{$dir-end}: $border solid $gray
 
   &.is-center
     text-align: center
@@ -102,8 +71,23 @@
   &.is-middle tbody
     vertical-align: middle
 
-  &.is-small td
-    padding: ($padding * 0.5) $padding
+  &.is-mobile-colapsed
+    th, td
+      &:not(:last-child)
+        +mobile()
+          border-right: 0
+      +mobile()
+        display: block
+        width: 100%
+    thead
+      th
+        +mobile()
+          border-bottom: 0
+    tr
+      +mobile()
+        display: block
+        border-top: $border solid $gray
 
-  &.is-large td
-    padding: ($padding * 2) $padding
+    td
+      +mobile()
+        border: 0
