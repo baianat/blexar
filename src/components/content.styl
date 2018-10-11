@@ -7,18 +7,12 @@
       margin-bottom: 1em
       font-size: 1em
 
-  h1
-    &:not(:first-child)
-      margin-top: 1em
-  h2
-    &:not(:first-child)
-      margin-top: 1em
-  h3
+  h1, h2, h3
     &:not(:first-child)
       margin-top: 1em
 
   blockquote
-    border-left: 0.5em solid $clPrimary
+    border-left: 0.5em solid $primary
     padding: $padding
     margin: 0
 
@@ -68,5 +62,5 @@
     word-wrap: normal
 
   sup, sub
-    font-size: 75%
+    font-size: 0.75em
   generateSizes()
