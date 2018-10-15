@@ -16,53 +16,53 @@
   for $n in (0 .. $columns)
     &.is-{$n},
     &.is-mobile-{$n}
-      flex: 0 0 ($n / $columns * 100) %
-      min-width: ($n / $columns * 100) %
-      width: ($n / $columns * 100) %
+      flex: 0 0 round($n / $columns * 100%, 3)
+      min-width: round($n / $columns * 100%, 3)
+      width: round($n / $columns * 100%, 3)
 
     &.is-offset-{$n},
     &.is-offset-mobile-{$n}
-      margin-{$dir-start}: ($n / $columns * 100) %
+      margin-{$dir-start}: round($n / $columns * 100%, 3)
 
   +tablet()
     for $n in (0 .. $columns)
       &.is-tablet-{$n}
-        flex: 0 0 ($n / $columns * 100) %
-        min-width: ($n / $columns * 100) %
-        width: ($n / $columns * 100) %
+        flex: 0 0 round($n / $columns * 100%, 3)
+        min-width: round($n / $columns * 100%, 3)
+        width: round($n / $columns * 100%, 3)
 
       &.is-offset-tablet-{$n}
-        margin-{$dir-start}: ($n / $columns * 100) %
+        margin-{$dir-start}: round($n / $columns * 100%, 3)
 
   +desktop()
     for $n in (0 .. $columns)
       &.is-desktop-{$n}
-        flex: 0 0 ($n / $columns * 100) %
-        min-width: ($n / $columns * 100) %
-        width: ($n / $columns * 100) %
+        flex: 0 0 round($n / $columns * 100%, 3)
+        min-width: round($n / $columns * 100%, 3)
+        width: round($n / $columns * 100%, 3)
 
       &.is-offset-desktop-{$n}
-        margin-{$dir-start}: ($n / $columns * 100) %
+        margin-{$dir-start}: round($n / $columns * 100%, 3)
 
   +widescreen()
     for $n in (0 .. $columns)
       &.is-widescreen-{$n}
-        flex: 0 0 ($n / $columns * 100) %
-        min-width: ($n / $columns * 100) %
-        width: ($n / $columns * 100) %
+        flex: 0 0 round($n / $columns * 100%, 3)
+        min-width: round($n / $columns * 100%, 3)
+        width: round($n / $columns * 100%, 3)
 
       &.is-offset-widescreen-{$n}
-        margin-{$dir-start}: ($n / $columns * 100) %
+        margin-{$dir-start}: round($n / $columns * 100%, 3)
 
   +ultrawide()
     for $n in (0 .. $columns)
       &.is-ultrawide-{$n}
-        flex: 0 0 ($n / $columns * 100) %
-        min-width: ($n / $columns * 100) %
-        width: ($n / $columns * 100) %
+        flex: 0 0 round($n / $columns * 100%, 3)
+        min-width: round($n / $columns * 100%, 3)
+        width: round($n / $columns * 100%, 3)
 
       &.is-offset-ultrawide-{$n}
-        margin-{$dir-start}: ($n / $columns * 100) %
+        margin-{$dir-start}: round($n / $columns * 100%, 3)
 
   &.is-middle
     align-self: center
