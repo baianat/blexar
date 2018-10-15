@@ -3,6 +3,7 @@ $font-size = generateFontSizes()
 /**
  * elemets sizes
  */
+
 $size-tiny ?= $font-size[0]
 $size-small ?= $font-size[1]
 $size-normal ?= $font-size[2]
@@ -12,17 +13,6 @@ $size-massive ?= $font-size[4]
 /**
  * typography
  */
-$display-1 ?= $font-size[13]
-$display-2 ?= $font-size[12]
-$display-3 ?= $font-size[11]
-$display-4 ?= $font-size[10]
-
-$header-1 ?= $font-size[8]
-$header-2 ?= $font-size[7]
-$header-3 ?= $font-size[6]
-$header-4 ?= $font-size[5]
-$header-5 ?= $font-size[4]
-$header-6 ?= $font-size[3]
 
 $font-tiny ?= $font-size[0]
 $font-small ?= $font-size[1]
@@ -40,6 +30,7 @@ $font-weight-bold ?= 700
 /**
  * Device Breakpoint
  */
+
 $mobile ?= 0
 $tablet ?= 768px
 $desktop ?= 991px
@@ -49,6 +40,7 @@ $ultrawide ?= 1920px
 /**
  * grid
  */
+
 $columns ?= 12
 $dir ?= ltr
 $dir-start ?= $dir == 'ltr' ? left : right
@@ -64,6 +56,7 @@ $container-ultrawide ?= $ultrawide - (22 * 5)
 /*
  * style
  */
+
 $margin ?= 0.5em
 $padding ?= 0.5em
 $padding-px ?= 20px
@@ -76,12 +69,14 @@ $outline-opacity ?= 25%
 /**
  * animation
  */
-$transition-time ?= 0.4s
+
+$transition-time ?= 0.2s
 $transition-function ?= ease-in-out
 
 /**
  * modifiers
  */
+
 $modifiers-size ?= 'tiny' 'small' 'normal' 'large' 'massive'
 $modifiers-style ?= 'block' 'disabled' 'rounded' 
 $modifiers-color ?= 'primary' 'secondary' 'info' 'success' 'warning' 'danger' 'black' 'white' 'dark' 'light'
