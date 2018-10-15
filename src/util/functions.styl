@@ -1,6 +1,7 @@
-/*
+/**
  * check if the color name is a light color
  */
+
 isLight(color) {
   if (color == 'white' || color == 'light' || color == 'gray' || color == 'warning') {
     return true;
@@ -8,9 +9,10 @@ isLight(color) {
   return false;
 }
 
-/*
+/**
  * convert values to rem
  */
+
 toRem(value) {
     u = unit(value);
     if (u is 'px') {
@@ -20,9 +22,9 @@ toRem(value) {
     }
 }
 
-/*
- * generate font sizes
- * based on equation
+/**
+ * Generate font sizes, based on equation
+ * 
  * F(n) = f(n - 1) + { floor((n - 2) / 4) + 1 } * 2
  *
  * | index | px |  rem  |
@@ -42,7 +44,9 @@ toRem(value) {
  * |   12  | 60 | 3.75  |
  * |   13  | 68 | 4.25  |
  * |   14  | 76 | 4.75  |
+ * 
  */
+
 generateFontSizes() {
   current = 12;
   sizes = ();
