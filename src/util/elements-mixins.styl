@@ -30,7 +30,13 @@ _button-color(accent, text)
     background-color:  accent
     color: text
     _icon-color:  text
-  
+
+_button-grad(grad, text)
+  background-image: linear-gradient($grad-direction, grad[0], grad[1])
+  color: text
+  _icon-color:  text
+
+
 _textarea-color(primary, secondary = primary)
   border-color: primary 
   &:focus

@@ -27,6 +27,25 @@
     &.is-{color}
       _button-color: $accentColor $textColor
 
+  // generate gradient modifiers
+  for color in $modifiers-color-grad
+    $grad = lookup('$grad-' + color)
+    &.is-{color}.is-gradient
+      _button-grad: $grad $white
+
+  &.is-gradient
+    border-width: 0
+    &:focus
+      box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
+    
+    &:hover
+    &:active
+    &.is-active
+      opacity: 0.8
+    &[disabled]
+      border-color: $primary
+      background-color:  $primary
+
   .icon
     &:first-child:not(:last-child)
       margin-{$dir-end}: ($padding * 0.5)
