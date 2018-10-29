@@ -1,60 +1,57 @@
 .sidebar
-  padding: $padding
+  padding: $padding 40px
   background-color: $white
   z-index: 999
   scroll-behavior: smooth
 
-  &-label
-    text-transform: uppercase
-    font-weight: bold
-    padding: 0.5em 1em
-    color: $black
-    @extend $small
+.sidebar-label
+  text-transform: uppercase
+  font-weight: bold
+  padding: 0.5em 1em
+  color: $black
+  @extend $small
 
-  &-menu,
-  &-submenu
-    margin: $margin 0
-    list-style: none
-    padding-{$dir-start}: 0.75em
+.sidebar-menu,
+.sidebar-submenu
+  margin: $margin 0
+  list-style: none
+  padding-{$dir-start}: 0.75em
 
-  &-wrapper
-    overflow: hidden
+.sidebar-wrapper
+  overflow: hidden
 
-  &-link,
-  &-toggle
-    display: block
-    border-radius: $border-radius
-    padding: 0.5em 1em
-    color: $black
-    background: transparent
-    border: 0
-    width: 100%
-    text-align: left
-    cursor: pointer
-    @extend $normal
-    &:focus,
-    .is-active
-      outline: none
-      background-color: lighten($gray, 30%)
-    &:hover
-      background-color: lighten($gray, 50%)
+.sidebar-link,
+.sidebar-toggle
+  display: block
+  border-radius: $border-radius
+  padding: 0.5em 1em
+  color: $black
+  background: transparent
+  border: 0
+  width: 100%
+  text-align: left
+  cursor: pointer
+  @extend $normal
+  &:focus,
+  .is-active
+    outline: none
+    color: $secondary
+  &:hover
+    color: $secondary
 
-  &-item
-    margin-top: 0
+.sidebar-item
+  margin-top: 0
+  &.is-active
+    .sidebar-submenu
+      display: block
+    .sidebar-toggle
+      color: $secondary
+      box-shadow: 0 5px 20px alpha($dark, 10%)
+
+.sidebar-submenu
+  display: none
+  padding: 0.75em
+  .sidebar-link
     &.is-active
-      .sidebar-submenu
-        display: block
-      .sidebar-toggle
-        color: $primary
-
-  &-submenu
-    display: none
-    padding: 0.75em
-    .sidebar-link
-      border-left: 1px solid $gray
-      border-top-left-radius: 0
-      border-bottom-left-radius: 0
-      &.is-active
-        border-left: 2px solid $blue
-        background: transparent
-        color: $primary
+      background: transparent
+      color: $secondary
