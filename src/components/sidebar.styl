@@ -5,17 +5,19 @@
   scroll-behavior: smooth
 
 .sidebar-label
-  text-transform: uppercase
-  font-weight: bold
-  padding: 0.5em 1em
+  font-weight: $font-weight-bold
+  padding: 0.75em 1em
   color: $black
-  @extend $small
+  font-size: $font-size[4]
 
 .sidebar-menu,
 .sidebar-submenu
   margin: $margin 0
   list-style: none
-  padding-{$dir-start}: 0.75em
+  padding-{$dir-start}: 0
+
+.sidebar-submenu
+  padding-{$dir-start}: 0.5em
 
 .sidebar-wrapper
   overflow: hidden
@@ -24,7 +26,7 @@
 .sidebar-toggle
   display: block
   border-radius: $border-radius
-  padding: 0.5em 1em
+  padding: 0.75em 1em
   color: $black
   background: transparent
   border: 0
@@ -46,12 +48,17 @@
       display: block
     .sidebar-toggle
       color: $secondary
+      font-weight: $font-weight-medium
       box-shadow: 0 5px 20px alpha($dark, 10%)
 
 .sidebar-submenu
   display: none
-  padding: 0.75em
+  padding: 0.75em 1em
   .sidebar-link
+    border-radius: 0
+    padding: 0.5em 0.75em
     &.is-active
-      background: transparent
       color: $secondary
+      border-width: 0 0 0 2px
+      border-style: solid
+      border-color: $secondary
