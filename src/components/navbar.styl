@@ -7,59 +7,9 @@
   font-weight: $font-weight-semi-bold
   @extend $normal
 
-
-  &-brand
-    display: flex
-    align-items: center
-  &-start,
-  &-end
-    display: flex
-    align-items: center
-
-  &-brand
-    margin-{$dir-end}: $margin
-    img
-      max-height: 40px
-      display: block
-    &.is-white
-      filter: brightness(0) invert(1)
-
-  &-start,
-  &-end
-    flex: 1
-  &-end
-    justify-content: flex-end
-  &-item
-    display: block
-    padding: $padding (2 * $padding)
-    color: $black
-    text-decoration: none
-    white-space: nowrap
-    cursor: pointer
-    _icon-color: $black
-    line-height: 40px
-    @extends $normal
-    .navbar-item
-      padding: 0
-
-    &.dropdown
-      height: auto
-
-    &:hover, &:focus
-      color: $primary
-      _icon-color: $primary
-
-    ~/.is-inverse &
-      color: $white
-      _icon-color: $white
-
-      &:hover, &:focus
-        color: $primary
-        _icon-color: $primary
-
-    &.is-active
-      border-bottom: 4px solid $primary
-      color: $primary
+  &.is-gradient
+    background-image: linear-gradient(90deg, $grad-primary)
+    color: $white
 
   &.is-fixed
     position: fixed
@@ -75,5 +25,63 @@
   &.is-hidden
     transform: translate3d(0, -100%, 0)
   // reset nested elements
+
+
+.navbar-brand
+  display: flex
+  align-items: center
+.navbar-start,
+.navbar-end
+  display: flex
+  align-items: center
+
+.navbar-brand
+  margin-{$dir-end}: $margin
+  img
+    max-height: 40px
+    display: block
+  &.is-white
+    filter: brightness(0) invert(1)
+    fill: $white
+
+.navbar-start,
+.navbar-end
+  flex: 1
+.navbar-end
+  justify-content: flex-end
+.navbar-item
+  display: block
+  padding: $padding (2 * $padding)
+  color: $black
+  text-decoration: none
+  white-space: nowrap
+  cursor: pointer
+  _icon-color: $black
+  line-height: 40px
+  @extends $normal
+  .navbar-item
+    padding: 0
+
+  &.dropdown
+    height: auto
+
+  &:hover, &:focus
+    color: $primary
+    _icon-color: $primary
+
+  .navbar.is-inverse &,
+  .navbar.is-gradient &
+    color: $white
+    _icon-color: $white
+
+  &:hover, &:focus
+    color: $primary
+    _icon-color: $primary
+
+  &.is-active
+    border-bottom: 4px solid $primary
+    color: $primary
+
+
   .button
     margin-bottom: 0
