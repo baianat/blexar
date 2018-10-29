@@ -29,7 +29,8 @@
       box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
 
     &:checked
-      background-color: $light
+      background-color: $primary
+      border-color: $primary
 
       &:after
         opacity: 1
@@ -39,7 +40,7 @@
       opacity: 0
       width: 0.2em
       height: 0.5em
-      border: solid $primary
+      border: solid $white
       border-width: 0 0.13em 0.13em 0
       content: ''
       transform: translate3d(0, -0.1em, 0) rotate(45deg)
