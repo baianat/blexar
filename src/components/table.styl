@@ -29,25 +29,6 @@
   // generate size modifiers
   generateSizes()
 
-  &-responsive
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-
-  &-sort
-    float: right
-    padding: 0
-    outline: 0
-    background: none
-    border: none
-
-    &.is-active
-      fill: $primary
-      stroke: $primary
-
-    &.is-desc
-      transform: scaleY(-1)
-
   &.is-striped
     tbody tr:nth-of-type(odd)
       background-color: $light
@@ -58,6 +39,10 @@
     td
       &:not(:last-child)
         border-{$dir-end}: $border solid $gray
+
+  &.is-clean
+    td
+      border-top: 0
 
   &.is-center
     text-align: center
@@ -91,3 +76,22 @@
     td
       +mobile()
         border: 0
+
+.table-responsive
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+
+.table-sort
+  float: right
+  padding: 0
+  outline: 0
+  background: none
+  border: none
+
+  &.is-active
+    fill: $primary
+    stroke: $primary
+
+  &.is-desc
+    transform: scaleY(-1)
