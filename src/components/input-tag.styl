@@ -31,11 +31,12 @@
   // generate color modifiers
   for color in $modifiers-color
     $color = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
     &.is-{color}
       border-color: $color
       background-color: $color
-      color: $white
-      _icon-color: $white
+      color: $textColor
+      _icon-color: $textColor
 
 
   &.is-rounded

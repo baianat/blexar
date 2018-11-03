@@ -1,15 +1,20 @@
 .input-group
   display: flex
   margin-bottom: $margin
-  *:not(:last-child)
+  >:not(:last-child)
+  >.is-rounded:not(:last-child)
+  &.is-rounded >:not(:last-child)
     border-top-{$dir-end}-radius: 0
     border-bottom-{$dir-end}-radius: 0
-  *:not(:first-child)
+  >:not(:first-child)
+  >.is-rounded:not(:first-child)
+  &.is-rounded >:not(:first-child)
     border-top-{$dir-start}-radius: 0
     border-bottom-{$dir-start}-radius: 0
-
-  >*:not(.input-group-label)
+  >*
     margin-bottom: 0
+  .input + .input
+    margin-{$dir-start}: -1px;
 
   // generate all modifiers
   for color in $modifiers-color
