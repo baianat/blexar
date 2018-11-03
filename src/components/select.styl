@@ -9,14 +9,15 @@
   border-style: solid
   border-radius: $border-radius
   background-color: $white
-  background-image: linear-gradient(45deg, transparent 50%, $black 50%), linear-gradient(135deg, $black 50%, transparent 50%)
-  background-position: calc(100% - 0.8em) calc(50% + 0.1em), calc(100% - 0.4em) calc(50% + 0.1em)
-  background-size: 0.4em 0.4em, 0.4em 0.4em
-  background-repeat: no-repeat
+  background-position: right 0.75em center
+  background-size: 0.5em
+  background-repeat: no-repeat 
   text-align: left
   -webkit-appearance: none
   -moz-appearance: none
   _select-color: $gray $primary
+  &:not([multiple])
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#D4D2E5' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") 
 
   /*
    * select elments
