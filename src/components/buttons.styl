@@ -1,37 +1,35 @@
 .buttons
-  display: flex
+  display: inline-flex
   flex-wrap: wrap
   align-items: center
   margin-bottom: $margin
-
-  >.label
-    z-index: 2
-    margin: 0 -18.5px
-
-  >.button
+  >:not(:last-child)
+  >.is-rounded:not(:last-child)
+  &.is-rounded >:not(:last-child)
+    border-top-{$dir-end}-radius: 0
+    border-bottom-{$dir-end}-radius: 0
+  >:not(:first-child)
+  >.is-rounded:not(:first-child)
+  &.is-rounded >:not(:first-child)
+    border-top-{$dir-start}-radius: 0
+    border-bottom-{$dir-start}-radius: 0
+  >*
     margin-bottom: 0
 
-    &:not(:first-child):not(:last-child)
-      border-radius: 0
-
-    &:first-child
-      border-top-{$dir-end}-radius: 0
-      border-bottom-{$dir-end}-radius: 0
-
-    &:last-child
-      border-top-{$dir-start}-radius: 0
-      border-bottom-{$dir-start}-radius: 0
-
-  &.is-outlined
-    .button
-      &:not(:first-child):not(:last-child)
-        border-{$dir-start}-width: 0
-
-      &:last-child
-        border-{$dir-start}-width: 0
+  .button + .button
+    border-{$dir-start}: 0
 
   &.is-block
     flex-wrap: nowrap
+
+  &.is-gradient
+    border-radius: $border-radius
+    >.button
+      background-color: transparent
+      border: 0
+
+  &.is-rounded
+    border-radius: 10em
 
   // generate all modifiers
   for color in $modifiers-color
@@ -42,10 +40,16 @@
       >.button
         @extends .button.is-{color}.is-outlined
 
+  for color in $modifiers-color-grad
+    $grad = lookup('$grad-' + color)
+    &.is-{color}.is-gradient
+      background-image: linear-gradient($grad-direction, $grad[0], $grad[1])
+
   for size in $modifiers-size
     &.is-{size}
       >.button
         @extends .button.is-{size}
+
   for style in $modifiers-style
     &.is-{style}
       >.button
@@ -53,4 +57,4 @@
 
   &[disabled]
     >.button
-      @extends .button.is-disabled
+      @extends .button[disabled]
