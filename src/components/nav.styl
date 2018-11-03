@@ -1,0 +1,96 @@
+.nav
+  padding: $padding 40px
+  background-color: $white
+  z-index: 999
+  scroll-behavior: smooth
+
+.nav-label
+  font-weight: $font-weight-bold
+  padding: 0.75em 1em
+  color: $black
+  font-size: $font-size[2]
+  margin: 1em 0
+
+.nav-menu,
+.nav-submenu
+  margin: $margin 0
+  list-style: none
+  padding-{$dir-start}: 0
+
+.nav-submenu
+  display: none
+  padding: 0.7em 0.7em 0.7em 2.2em
+  .nav-link
+    border-radius: 0
+    padding: 0.5em 0.75em
+    &.is-active
+      color: $secondary
+      border-width: 0 0 0 2px
+      border-style: solid
+      border-color: $secondary
+.nav-wrapper
+  overflow: hidden
+
+.nav-link,
+.nav-toggle
+  position: relative
+  display: block
+  border-radius: $border-radius
+  padding: 0.75em 1em
+  color: $black
+  background: transparent
+  border: 0
+  width: 100%
+  text-align: left
+  cursor: pointer
+  @extend $normal
+  &:focus,
+  .is-active
+    outline: none
+    color: $secondary
+  &:hover
+    color: $secondary
+  .icon
+    margin-{$dir-end}: $margin
+
+.nav-icon
+  width: 15px
+  height: 15px
+  position: absolute
+  right: 10px
+  top: 50%
+  transform: translateY(-50%)
+  display: flex
+  align-items: center
+
+  &:after, &:before
+    width: 7.5px
+    height: 2px
+    content: ''
+    display: block
+    background: $black
+    transition: transform 0.2s ease-in-out
+
+  &:after
+    transform: rotate(-45deg)
+    margin-left: -1.75px
+
+  &:before
+    transform: rotate(45deg)
+    margin-right: -1.75px
+  .nav-item.is-active &
+    &:after
+      transform: rotate(45deg)
+
+    &:before
+      transform: rotate(-45deg)
+.nav-item
+  margin-top: 0
+  list-style: none
+  &.is-active
+    .nav-submenu
+      display: block
+    .nav-toggle
+      color: $secondary
+      font-weight: $font-weight-medium
+      box-shadow: 0 5px 20px alpha($dark, 10%)
