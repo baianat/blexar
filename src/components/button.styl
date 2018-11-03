@@ -35,16 +35,18 @@
 
   &.is-gradient
     border-width: 0
-    &:focus
+    background-color: transparent
+    &:focus:not(:active)
       box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
     
     &:hover
     &:active
     &.is-active
       opacity: 0.8
+    .is-disabled
     &[disabled]
       border-color: $primary
-      background-color:  $primary
+      background-color: $primary
 
   .icon
     &:first-child:not(:last-child)
@@ -63,7 +65,6 @@
     width: 100%
 
   &.is-rounded
-    border-width: $border
     border-radius: 10em
 
   &.is-clean
