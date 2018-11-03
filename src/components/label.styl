@@ -5,7 +5,7 @@
   overflow: hidden
   margin: 0 2px
   margin-bottom: $margin
-  padding: 0.25em 0.3em
+  padding: 0.25em 0.5em
   min-width: 37px
   border-radius: $border-radius
   color: $black
@@ -24,10 +24,12 @@
     height: 1em
     width: 1em
 
-  .icon:first-child:not(:last-child), img:first-child:not(:last-child)
+  .icon:first-child:not(:last-child)
+  img:first-child:not(:last-child)
     margin-{$dir-end}: ($padding * 0.5)
 
-  .icon:last-child:not(:first-child), img:last-child:not(:first-child)
+  .icon:last-child:not(:first-child)
+  img:last-child:not(:first-child)
     margin-{$dir-start}: ($padding * 0.5)
 
   // generate size modifiers
