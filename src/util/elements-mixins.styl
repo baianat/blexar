@@ -7,10 +7,6 @@ _icon-color(color)
   stroke-width: 0
 
 _button-color(accent, text)
-  border-color: accent
-  background-color:  accent
-  color: text
-  _icon-color:  text
   &.is-outlined
     background-color: transparent
     color: accent
@@ -24,7 +20,8 @@ _button-color(accent, text)
     _icon-color: text
   &:focus
     box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
-
+  &
+  &.is-disabled
   &[disabled]
     border-color: accent
     background-color:  accent
@@ -51,7 +48,6 @@ _input-color(primary, secondary = primary)
 
 _select-color(primary, secondary = primary)
   border-color: primary
-  background-image: linear-gradient(45deg, transparent 50%, primary 50%), linear-gradient(135deg, primary 50%, transparent 50%)
   color: secondary
   .select-label,
   .select-item.is-selected,
