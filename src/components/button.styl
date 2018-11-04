@@ -17,6 +17,9 @@
   transition: $transition-time $transition-function
   _button-color: $gray $dark
 
+  &:not(:last-child)
+    margin-{$dir-end}: $margin
+
   // generate size modifiers
   generateSizes()
 

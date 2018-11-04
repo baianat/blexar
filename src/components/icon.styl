@@ -5,6 +5,8 @@
   font-size: 1em
   width: 1em
   height: 1em
+  &:not(:last-child)
+    margin-{$dir-end}: $margin
 
   // generate color modifiers
   for color in $modifiers-color
