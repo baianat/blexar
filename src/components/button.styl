@@ -6,8 +6,7 @@
   margin-bottom: $margin
   padding: $padding ($padding * 1.5)
   outline: none
-  border-width: $border
-  border-style: solid
+  border-style: none
   border-radius: $border-radius
   background-clip: border-box
   vertical-align: top
@@ -37,7 +36,6 @@
       _button-grad: $grad $white
 
   &.is-gradient
-    border-width: 0
     background-color: transparent
     &:focus:not(:active)
       box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
@@ -69,6 +67,10 @@
 
   &.is-rounded
     border-radius: 10em
+
+  &.is-outlined
+    border-style: solid
+    border-width: $border
 
   &.is-clean
     margin: 0

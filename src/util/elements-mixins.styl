@@ -11,10 +11,12 @@ _button-color(accent, text)
     background-color: transparent
     color: accent
     _icon-color: accent
+  &.is-bright
+    background-color: lighten(accent, 85%)
+    color: accent
   &:hover
   &:active
   &.is-active
-    border-color: darken(accent, 15%)
     background-color: darken(accent, 15%)
     color: text
     _icon-color: text
@@ -64,7 +66,7 @@ _select-color(primary, secondary = primary)
 
 
 _modal-color(accent, textColor)
-  background-color: lighten(accent, 90%)
+  background-color: lighten(accent, 85%)
   color: textColor
   _icon-color: textColor
   &.is-outline
@@ -72,7 +74,7 @@ _modal-color(accent, textColor)
     color: accent
     _icon-color: accent
   &:focus
-    border-color: darken(accent, 15%)
+    border-color: accent
     box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
 
 _label-color(accent, textColor)
