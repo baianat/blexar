@@ -43,6 +43,9 @@
   &.is-clean
     td
       border-top: 0
+  &.is-hoverable
+    tbody tr:hover
+      background-color: $light
 
   &.is-center
     text-align: center
@@ -77,6 +80,13 @@
       +mobile()
         border: 0
 
+  tr
+    for color in $modifiers-color
+      $accent = lookup('$' + color)
+      $text = isLight(color) ? $black : $white
+      &.is-{color}
+        background-color: $accent
+        color: $text
 .table-responsive
   display: block;
   width: 100%;
