@@ -9,10 +9,11 @@
   border: 0
   border-radius: $border-radius-large
   background-color: $white
-  max-width: 800px
-  max-height: calc(100vh - 40px)
-  box-shadow: 0 8px 20px alpha($dark, 10%)
+  max-width: 500px
+  margin-left: auto
+  margin-right: auto
   margin-bottom: $modal-spacing
+  box-shadow: boxShadow(large)
   @extends $normal
 
   for color in $modifiers-color
@@ -51,6 +52,7 @@
   margin-{$dir-end}: $modal-spacing
 
 .modal-footer
+  display: flex
   margin-top: $modal-spacing
   >*
     margin-bottom: 0
@@ -58,7 +60,6 @@
 .modal-dismiss
   position: absolute
   top: 0
-  z-index: 9999
   padding: $modal-spacing * 0.5
   border: 0
   background-color: transparent
