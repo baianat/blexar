@@ -12,9 +12,11 @@
     border-top-{$dir-start}-radius: 0
     border-bottom-{$dir-start}-radius: 0
   >*
-    margin-bottom: 0
+  >.button
+    margin: 0
   .input + .input
     margin-{$dir-start}: -1px;
+  
 
   // generate all modifiers
   for color in $modifiers-color

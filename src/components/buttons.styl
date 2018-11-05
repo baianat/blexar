@@ -13,11 +13,14 @@
   &.is-rounded >:not(:first-child)
     border-top-{$dir-start}-radius: 0
     border-bottom-{$dir-start}-radius: 0
-  >*
+  >.button
     margin-bottom: 0
+    margin-right: 0
 
   .button + .button
     border-{$dir-start}: 0
+    margin-{$dir-start} 0
+
 
   &.is-block
     flex-wrap: nowrap
@@ -39,7 +42,9 @@
     &.is-{color}.is-outlined
       >.button
         @extends .button.is-{color}.is-outlined
-
+    &.is-{color}.is-bright
+      >.button
+        @extends .button.is-{color}.is-bright
   for color in $modifiers-color-grad
     $grad = lookup('$grad-' + color)
     &.is-{color}.is-gradient
