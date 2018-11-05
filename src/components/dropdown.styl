@@ -1,77 +1,49 @@
 .dropdown
   position: relative
   display: flex
-  flex-wrap: wrap
-  justify-content: flex-start
-
-  &-toggle
-    color: $black
-    &.is-active,
-    &:hover,
-    &:focus,
-    &:active
-      color: $primary
-
-  &-item
-    padding: $padding (2 * $padding)
-    color: $black
-    &:hover
-      background-color: $light
-      color: $black
-    &.is-active,
-    &:focus,
-    &:active
-      color: $white
-      background-color: $primary
-    ~/&
-      background: $white
-  &-menu
-    position: absolute
-    display: flex
-    flex-direction: column
-    top: 0
-    left: 0
-    padding: $padding 0
-    width: 300px
-    border: $border solid $gray
-    border-radius: $border-radius
-    background-color: $white
-    color: $black
-    transform-origin: top left
-    user-select: none
-    margin-top: 50px
-
-    li
-      padding: 0
-      font-size: $font-normal
-
-    .dropdown-menu &
-      position: relative
-      top: 0
-      margin-top: $padding
-
-    &:empty
-      display: none
-
-    &.is-hidden
-      margin: 0
-      padding: 0
-      height: 0
-      transform: scale(0)
-
-    &.is-visible
-      transform: scale(1)
+  flex-direction: column
+  align-items: flex-start
+  &.is-active .dropdown-menu
+    transform: scale(1)
 
   &.is-right
-    justify-content: flex-end
+    align-items: flex-end
     .dropdown-menu
-      right: 0
-      left: auto
-      left: initial
       transform-origin: top right
 
   &.is-center
-    justify-content: center
+    align-items: center
     .dropdown-menu
-      left: calc(50% - 150px)
       transform-origin: top center
+
+.dropdown-toggle.button
+  marign: 0
+
+.dropdown-item
+  display: block
+  padding: $padding (2 * $padding)
+  color: $black
+  &:hover
+    background-color: $light
+    color: $black
+  &.is-active,
+  &:focus,
+  &:active
+    color: $white
+    background-color: $primary
+
+.dropdown-menu
+  display: flex
+  flex-direction: column
+  padding: $padding 0
+  max-width: 250px
+  border-radius: $border-radius
+  background-color: $white
+  color: $dark
+  transform-origin: top left
+  user-select: none
+  margin: 0
+  box-shadow: boxShadow(small)
+  transform: scale(0)
+  &:empty
+    display: none
