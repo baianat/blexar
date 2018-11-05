@@ -9,11 +9,12 @@
   border-style: none
   border-radius: $border-radius
   background-clip: border-box
-  vertical-align: top
+  vertical-align: middle
   text-align: center
   text-decoration: none
+  user-select: none
   cursor: pointer
-  transition: $transition-time $transition-function
+  line-height: 1em
   _button-color: $gray $dark
 
   &:not(:last-child)
@@ -24,10 +25,10 @@
 
   // generate color modifiers
   for color in $modifiers-color
-    $accentColor = lookup('$' + color)
-    $textColor = isLight(color) ? $black : $white
+    $accent = lookup('$' + color)
+    $text = isLight(color) ? $black : $white
     &.is-{color}
-      _button-color: $accentColor $textColor
+      _button-color: $accent $text
 
   // generate gradient modifiers
   for color in $modifiers-color-grad
@@ -73,11 +74,15 @@
     border-width: $border
 
   &.is-clean
-    margin: 0
-    border: 0
-    background-color: transparent
-    color: $black
-    _icon-color: $black
+    padding: $padding
+    color: $dark
+    _icon-color: $dark
+    &
+    &:hover
+    &:active
+    &:focus
+    &.is-active
+      background-color: transparent
 
   &.is-link
     padding-top: 0.3em

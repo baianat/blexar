@@ -14,19 +14,25 @@ _button-color(accent, text)
   &.is-bright
     background-color: lighten(accent, 85%)
     color: accent
+  &.is-clean
+    &:hover
+    &:active
+    &.is-active
+      color: accent
+      _icon-color: accent
   &:hover
   &:active
   &.is-active
     background-color: darken(accent, 15%)
     color: text
     _icon-color: text
-  &:focus
+  &:focus:not(:active)
     box-shadow: 0 0 0 $outline alpha(accent, $outline-opacity)
   &
   &.is-disabled
   &[disabled]
     border-color: accent
-    background-color:  accent
+    background-color: accent
     color: text
     _icon-color:  text
 
