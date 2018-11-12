@@ -44,7 +44,7 @@
     td
       border-top: 0
   &.is-hoverable
-    tbody tr:hover
+    tr:hover
       background-color: $light
 
   &.is-center
@@ -85,6 +85,7 @@
       $accent = lookup('$' + color)
       $text = isLight(color) ? $black : $white
       &.is-{color}
+      &.is-{color}:hover
         background-color: $accent
         color: $text
 .table-responsive
