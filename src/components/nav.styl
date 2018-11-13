@@ -50,9 +50,9 @@
   &:focus
   .is-active
     outline: none
-    color: $secondary
+    color: $primary
   &:hover
-    color: $secondary
+    color: $primary
   .icon
     margin-{$dir-end}: $margin
 
@@ -86,11 +86,11 @@
   .nav-item.is-active &
     &:after
       transform: rotate(45deg)
-      background: $secondary
+      background: $primary
 
     &:before
       transform: rotate(-45deg)
-      background: $secondary
+      background: $primary
 
 .nav-item
   margin-top: 0
@@ -99,6 +99,6 @@
     .nav-submenu
       display: block
     .nav-toggle
-      color: $secondary
+      color: $primary
       font-weight: $font-weight-medium
       box-shadow: boxShadow(small)
