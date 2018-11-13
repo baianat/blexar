@@ -6,15 +6,17 @@
   margin-bottom: $margin
   padding: $padding ($padding * 1.5)
   outline: none
-  border-style: none
+  border-style: solid
   border-radius: $border-radius
+  border-color: transparent
+  border-width: 1px
   background-clip: border-box
   vertical-align: middle
   text-align: center
   text-decoration: none
   user-select: none
   cursor: pointer
-  line-height: 1em
+  line-height: $element-lineheight
   _button-color: $gray $dark
 
   &:not(:last-child)
