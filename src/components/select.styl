@@ -116,9 +116,10 @@
 
   // generate color modifiers
   for color in $modifiers-color
-    $color = isLight(color) ? $black : lookup('$' + color)
+    $color = lookup('$' + color)
+    $text = isLight(color) ? $black : $color
     &.is-{color}
-      _select-color: $color
+      _select-color: $color $text
 
   .is-visible
     display: block
