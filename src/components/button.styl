@@ -75,25 +75,6 @@
     border-style: solid
     border-width: $border
 
-  &.is-loading
-    color: transparent !important
-    pointer-events: none
-    &:after
-      position: absolute
-      content: ''
-      display: block
-      width: 0.7em
-      height: 0.7em
-      top: calc(50% - (1em / 2))
-      left: calc(50% - (1em / 2))
-      border-radius: 2em
-      border-width: 0.15em
-      border-top-color: transparent
-      border-right-color: transparent
-      border-style: solid
-      animation: spinner-rotation 750ms infinite
-      animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55)
-
   &.is-clean
     padding: $padding
     color: $dark
