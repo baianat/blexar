@@ -3,26 +3,27 @@
   width: 100%
   border-spacing: 0
   border-collapse: separate
-  border-radius: $border-radius
+  border-radius: $border-radius-large
+  overflow: hidden
   color: $black
   text-align: $dir-start
 
   &:not(:last-child)
     margin-bottom: $margin
 
-  thead
-    background-color: $white
-    th
-      border-bottom: $border solid $gray
-      padding: ($padding * 2) $padding
-      font-weight: $font-weight-bold
 
+  thead
+    font-weight: $font-weight-bold
+    th
+      border-top: 0
+      border-bottom: $border solid $gray
   tfoot
     th
       border-top: $border solid $gray
       padding: ($padding * 2) $padding
 
-  td
+  td,
+  th
     padding: ($padding * 2) $padding
     border-top: $border solid $gray
 
@@ -58,6 +59,13 @@
 
   &.is-middle tbody
     vertical-align: middle
+
+  &.is-header-centerd
+    th
+      text-align: center
+  &.is-header-highlighted
+    th
+      background-color: $light
 
   &.is-mobile-colapsed
     th, td
