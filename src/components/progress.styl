@@ -1,0 +1,24 @@
+.progress
+  height: 12px
+  width: 100%
+  background-color: $light
+  border-radius: 10em
+  overflow: hidden
+  margin-bottom: $margin
+
+.progress-bar
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+  background-color: $primary
+  font-size: $font-tiny
+  color: $white
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accent = lookup('$' + color)
+    $text = isLight(color) ? $black : $white
+    &.is-{color}
+      background: $accent
+      color: $text
