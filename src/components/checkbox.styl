@@ -12,51 +12,52 @@
 
   generateSizes()
 
+  &-input
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0
+    width: 1.3em
+    height: 1.3em
+    border: $border solid $gray
+    border-radius: $border-radius
+    background-color: $white
+    cursor: pointer
+    outline: none
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
 
-input.checkbox
-.checkbox-input
-  display: inline-flex
-  justify-content: center
-  align-items: center
-  padding: 0
-  width: 1.3em
-  height: 1.3em
-  border: $border solid $gray
-  border-radius: $border-radius
-  background-color: $white
-  cursor: pointer
-  outline: none
-  appearance: none
-  -webkit-appearance: none
-  -moz-appearance: none
+    &:focus
+      border-color: $primary
+      box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
 
-  &:focus
-    border-color: $primary
-    box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
+    &:checked
+      background-color: $primary
+      border-color: $primary
 
-  &:checked
-    background-color: $primary
-    border-color: $primary
+      &:after
+        opacity: 1
 
     &:after
-      opacity: 1
-
-  &:after
-    display: block
-    opacity: 0
-    width: 0.2em
-    height: 0.5em
-    border: solid $white
-    border-width: 0 0.13em 0.13em 0
-    content: ''
-    transform: translate3d(0, -0.1em, 0) rotate(45deg)
+      display: block
+      opacity: 0
+      width: 0.2em
+      height: 0.5em
+      border: solid $white
+      border-width: 0 0.13em 0.13em 0
+      content: ''
+      transform: translate3d(0, -0.1em, 0) rotate(45deg)
 
 
-.checkbox-label
-  vertical-align: middle
-  margin-{$dir-start}: 0.4em
+  &-label
+    vertical-align: middle
+    margin-{$dir-start}: 0.4em
 
 
-.checkbox.is-inline
-  display: inline-flex
-  margin-{$dir-end}: 0.8em
+  &.is-inline
+    display: inline-flex
+    margin-{$dir-end}: 0.8em
+
+input.checkbox
+  @extends .checkbox-input
