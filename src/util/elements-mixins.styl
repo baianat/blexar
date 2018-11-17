@@ -4,23 +4,19 @@
 
 _icon-color(color)
   fill: color
-  stroke-width: 0
 
 _button-color(accent, text)
   &.is-outlined
-    border-color: accent
-    background-color: transparent
+  &.is-bright
+  &.is-clean:hover
+  &.is-clean:active
+  &.is-clean.is-active
     color: accent
     _icon-color: accent
+  &.is-outlined
+    border-color: accent  
   &.is-bright
     background-color: lighten(accent, 85%)
-    color: accent
-  &.is-clean
-    &:hover
-    &:active
-    &.is-active
-      color: accent
-      _icon-color: accent
   &:hover
   &:active
   &.is-active
@@ -39,6 +35,20 @@ _button-color(accent, text)
     border-bottom-color: text
     border-left-color: text
 
+_alert-color(accent, text)
+  &.is-outlined
+  &.is-bright
+    color: accent
+    _icon-color: accent
+  &.is-outlined
+    border-color: accent
+  &.is-bright
+    background-color: lighten(accent, 85%)
+  &
+    background-color: accent
+    color: text
+    _icon-color:  text
+  
 _button-grad(grad, text)
   background-image: linear-gradient($grad-direction, grad[0], grad[1])
   color: text
