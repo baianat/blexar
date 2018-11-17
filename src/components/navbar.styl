@@ -33,7 +33,6 @@
 .navbar-start,
 .navbar-end
   display: flex
-  align-items: center
 
 .navbar-brand
   margin-{$dir-end}: $margin
@@ -50,14 +49,16 @@
 .navbar-end
   justify-content: flex-end
 .navbar-item
-  display: block
-  padding: $padding (2 * $padding)
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0 (2 * $padding)
+  min-height: 50px
   color: $black
   text-decoration: none
   white-space: nowrap
   cursor: pointer
   _icon-color: $black
-  line-height: 40px
   @extends $normal
   .navbar-item
     padding: 0
