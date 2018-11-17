@@ -2,8 +2,24 @@
   margin-bottom: $margin
   padding: $padding ($padding * 1.5)
   width: 100%
-  border: 2px dashed $primary
+  border: 1px solid $gray
   border-radius: $border-radius
-  font-size: $font-normal
-  -webkit-appearance: none
-  -moz-appearance: none
+  line-height: $element-lineheight
+  display: inline-block
+  cursor: pointer
+  color: $dark
+  _icon-color: $dark
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $accent = lookup('$' + color)
+    $text = isLight(color) ? $black : $white
+    &.is-{color}
+      _file-color: $accent $text
+
+
+.file-input
+  display: none
