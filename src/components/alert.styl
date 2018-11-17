@@ -1,0 +1,34 @@
+.alert
+  position: relative
+  padding: 0.75em
+  border-radius: 10em
+  margin-bottom: $margin
+  _alert-color: $gray $dark
+  
+  // generate color modifiers
+  for color in $modifiers-color
+    $accent = lookup('$' + color)
+    $text = isLight(color) ? $black : $white
+    &.is-{color}
+      _alert-color: $accent $text
+
+  &.is-outlined
+    background-color: transparent
+    border-style: solid
+    border-width: ($border * 2)
+  &.is-float
+    box-shadow: boxShadow(large)
+
+.alert-dismiss
+  position: absolute
+  top: 0
+  padding: 0.75em
+  border: 0
+  background-color: transparent
+  {$dir-end}: 0
+  cursor: pointer
+  _icon-color: inherit
+  &:focus
+    outline: none
+  &:hover
+    _icon-color: $primary
