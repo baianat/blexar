@@ -1,7 +1,9 @@
 .alert
   position: relative
+  display: flex
+  align-items: center
   padding: 0.75em
-  border-radius: 10em
+  border-radius: 1.5em
   margin-bottom: $margin
   _alert-color: $gray $dark
   
@@ -20,15 +22,16 @@
     box-shadow: boxShadow(large)
 
 .alert-dismiss
-  position: absolute
-  top: 0
-  padding: 0.75em
+  margin-{$dir-start}: $margin
+  padding: 0
   border: 0
   background-color: transparent
-  {$dir-end}: 0
   cursor: pointer
   _icon-color: inherit
   &:focus
     outline: none
   &:hover
     _icon-color: $primary
+
+.alert-content
+  flex: 1
