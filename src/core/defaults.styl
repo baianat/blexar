@@ -38,19 +38,19 @@ p, dl, ol, ul, blockquote, pre
     font-size: 1em
 
 blockquote
-  border-left: 0.5em solid $primary
+  border-{$dir-start}: 0.5em solid $primary
   padding: $padding
   margin: 0
 
 ol
   list-style: decimal outside
-  margin-left: 1em
+  margin-{$dir-start}: 1em
   margin-top: 1em
   padding-{$dir-start}: 1em
 
 ul
   list-style: disc outside
-  margin-left: 1em
+  margin-{$dir-start}: 1em
   margin-top: 1em
   padding-{$dir-start}: 1em
 
@@ -62,7 +62,7 @@ ul
       list-style-type: square
 
 dd
-  margin-left: 2em
+  margin-{$dir-start}: 2em
 
 figure
   margin-left: 2em

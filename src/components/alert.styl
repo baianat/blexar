@@ -6,11 +6,12 @@
   border-radius: 1.5em
   margin-bottom: $margin
   _alert-color: $gray $dark
-  
+
   // generate color modifiers
   for color in $modifiers-color
     $accent = lookup('$' + color)
     $text = isLight(color) ? $black : $white
+
     &.is-{color}
       _alert-color: $accent $text
 
@@ -18,6 +19,7 @@
     background-color: transparent
     border-style: solid
     border-width: $border
+
   &.is-float
     box-shadow: boxShadow(large)
 
@@ -28,10 +30,12 @@
   background-color: transparent
   cursor: pointer
   _icon-color: inherit
+
   &:focus
     outline: none
+
   &:hover
     _icon-color: $primary
 
 .alert-content
-  flex: 1
+  flex: 1 1 0%

@@ -2,6 +2,7 @@
   padding: $padding
   background-color: $white
   scroll-behavior: smooth
+
   &.has-icons .nav-submenu
     padding: 0.75em 0.75em 0.75em 2.2em
 
@@ -12,8 +13,7 @@
   font-size: $font-size[2]
   margin: 1em 0
 
-.nav-menu,
-.nav-submenu
+.nav-menu, .nav-submenu
   margin: $margin 0
   list-style: none
   padding-{$dir-start}: 0
@@ -21,19 +21,21 @@
 .nav-submenu
   display: none
   padding: 0.75em
+
   .nav-link
     border-radius: 0
     padding: 0.5em 0.75em
+
     &.is-active
       color: $primary
-      border-width: 0 0 0 2px
+      border-{$dir-start}-width: 2px
       border-style: solid
       border-color: $primary
+
 .nav-wrapper
   overflow: hidden
 
-.nav-link
-.nav-toggle
+.nav-link, .nav-toggle
   display: flex
   align-items: center
   position: relative
@@ -44,15 +46,17 @@
   background: transparent
   border: 0
   width: 100%
-  text-align: left
+  text-align: $dir-start
   cursor: pointer
   @extend $normal
-  &:focus
-  .is-active
+
+  &:focus, .is-active
     outline: none
     color: $primary
+
   &:hover
     color: $primary
+
   .icon
     margin-{$dir-end}: $margin
 
@@ -60,7 +64,7 @@
   width: 15px
   height: 15px
   position: absolute
-  right: 10px
+  {$dir-end}: 10px
   top: 50%
   transform: translateY(-50%)
   display: flex
@@ -77,11 +81,11 @@
 
   &:after
     transform: rotate(-45deg)
-    margin-left: -1.75px
+    margin-{$dir-start}: -1.75px
 
   &:before
     transform: rotate(45deg)
-    margin-right: -1.75px
+    margin-{$dir-end}: -1.75px
 
   .nav-item.is-active &
     &:after
@@ -95,9 +99,11 @@
 .nav-item
   margin-top: 0
   list-style: none
+
   &.is-active
     .nav-submenu
       display: block
+
     .nav-toggle
       color: $primary
       font-weight: $font-weight-medium
