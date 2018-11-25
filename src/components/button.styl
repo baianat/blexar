@@ -9,7 +9,7 @@
   border-style: solid
   border-radius: $border-radius
   border-color: transparent
-  border-width: 1px
+  border-width: $border
   background-clip: border-box
   vertical-align: middle
   text-align: center
@@ -29,12 +29,14 @@
   for color in $modifiers-color
     $accent = lookup('$' + color)
     $text = isLight(color) ? $black : $white
+
     &.is-{color}
       _button-color: $accent $text
 
   // generate gradient modifiers
   for color in $modifiers-color-grad
     $grad = lookup('$grad-' + color)
+
     &.is-{color}.is-gradient
       _button-grad: $grad $white
 
@@ -42,15 +44,14 @@
     background-color: transparent
     background-position: -1px -1px
     background-size: calc(100% + 4px) calc(100% + 4px)
+
     &:focus:not(:active)
       box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
-    
-    &:hover
-    &:active
-    &.is-active
+
+    &:hover, &:active, &.is-active
       opacity: 0.8
-    .is-disabled
-    &[disabled]
+
+    .is-disabled, &[disabled]
       border-color: $primary
       background-color: $primary
 
@@ -82,11 +83,8 @@
     padding: $padding
     color: $dark
     _icon-color: $dark
-    &
-    &:hover
-    &:active
-    &:focus
-    &.is-active
+
+    &, &:hover, &:active, &:focus, &.is-active
       background-color: transparent
 
   &.is-link
@@ -110,9 +108,7 @@
       left: 0
       right: 0
 
-    &:hover
-    &:active
-    &.is-active
+    &:hover, &:active, &.is-active
       color: $link-hover
 
       &:after
@@ -122,11 +118,10 @@
   &:hover
     text-decoration: none
 
-  &.is-disabled
-  &[disabled]
+  &.is-disabled, &[disabled]
     opacity: 0.8
     cursor: not-allowed
 
-
 @keyframes spinner-rotation
-  to { transform: rotate(360deg) }
+  to
+    transform: rotate(360deg)
