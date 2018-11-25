@@ -14,16 +14,17 @@
   margin-right: auto
   margin-bottom: $modal-spacing
   box-shadow: boxShadow(large)
-  @extends $normal
+  @extend $normal
 
   for color in $modifiers-color
     $accentColor = lookup('$' + color)
     $textColor = isLight(color) ? $dark : $accentColor
+
     &.is-{color}
       _modal-color: $accentColor $textColor
 
   &.is-outlined
-    border-width: 1px
+    border-width: $border
     border-style: solid
     background-color: alpha($white, 10%)
 
@@ -44,6 +45,7 @@
   display: flex
   position: relative
   padding: 0
+
   *
     margin-top: 0
     margin-bottom: 0
@@ -54,6 +56,7 @@
 .modal-footer
   display: flex
   margin-top: $modal-spacing
+
   >*
     margin-bottom: 0
 
@@ -66,8 +69,10 @@
   {$dir-end}: 0
   cursor: pointer
   _icon-color: inherit
+
   &:focus
     outline: none
+
   &:hover
     _icon-color: $primary
 
@@ -89,4 +94,3 @@
 
   &.is-visable
     display: flex
-
