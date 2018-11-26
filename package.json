@@ -1,10 +1,6 @@
 {
   "name": "@blexar/framework",
-<<<<<<< HEAD
-  "version": "0.0.30",
-=======
   "version": "0.0.31",
->>>>>>> 8e73ff3acccba97dd03290c65ec68b22c8057890
   "description": "CSS framework to establish your favorite websites in mints, with user experience in mind.",
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
   "main": "dist/css/blexar.css",
