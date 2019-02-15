@@ -5,6 +5,7 @@
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
   "main": "dist/blexar.css",
   "style": "dist/blexar.css",
+  "repository": "https://github.com/baianat/blexar",
   "scripts": {
     "lint": "eslint ./src --fix",
     "build:extensions": "MODE=production node scripts/extensions",
