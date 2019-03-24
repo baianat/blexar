@@ -1,9 +1,11 @@
 .checkbox
   margin: 0 0 $margin 0
-  display: inline-flex
+  display: flex
   align-items: center
   cursor: pointer
-
+  &.is-inline
+    display: inline-flex
+    margin-{$dir-end}: 0.8em
   &.is-disabled
   &[disabled]
     opacity: 0.6
@@ -12,52 +14,59 @@
 
   generateSizes()
 
-  &-input
-    display: inline-flex
-    justify-content: center
-    align-items: center
-    padding: 0
-    width: 1.3em
-    height: 1.3em
-    border: $border solid $gray
-    border-radius: $border-radius
-    background-color: $white
-    cursor: pointer
-    outline: none
-    appearance: none
-    -webkit-appearance: none
-    -moz-appearance: none
-
-    &:focus
-      border-color: $primary
-      box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
-
-    &:checked
-      background-color: $primary
-      border-color: $primary
-
-      &:after
-        opacity: 1
-
+.checkbox-input
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  padding: 0
+  width: 1.3em
+  height: 1.3em
+  border: $border solid $gray
+  border-radius: $border-radius
+  background-color: $white
+  cursor: pointer
+  outline: none
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  &:after
+    display: block
+    opacity: 0
+    width: 0.2em
+    height: 0.5em
+    border: solid $white
+    border-width: 0 0.13em 0.13em 0
+    content: ''
+    transform: translate3d(0, -0.1em, 0) rotate(45deg)
+  &:focus
+    border-color: $primary
+    box-shadow: 0 0 0 $outline alpha($primary, $outline-opacity)
+  &:checked
+  &.is-checked
+    background-color: $primary
+    border-color: $primary
     &:after
-      display: block
-      opacity: 0
-      width: 0.2em
-      height: 0.5em
-      border: solid $white
-      border-width: 0 0.13em 0.13em 0
-      content: ''
-      transform: translate3d(0, -0.1em, 0) rotate(45deg)
+      opacity: 1
+  &:indeterminate
+  &.is-indeterminate
+    background-color: $primary
+    border-color: $primary
+    &:after
+      width: 0.5em
+      height: 0.13em
+      transform: rotate(0)
+      border-width: 0 0 0.13em
+      opacity: 1
+  &.is-disabled
+  &[disabled]
+    opacity: 0.6
+    pointer-events: none
+    cursor: not-allowed
 
+.checkbox-label
+  vertical-align: middle
+  margin-{$dir-start}: 0.4em
 
-  &-label
-    vertical-align: middle
-    margin-{$dir-start}: 0.4em
-
-
-  &.is-inline
-    display: inline-flex
-    margin-{$dir-end}: 0.8em
 
 input.checkbox
   @extends .checkbox-input
