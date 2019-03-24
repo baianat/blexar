@@ -1,10 +1,15 @@
 {
   "name": "@blexar/framework",
+<<<<<<< HEAD
   "version": "0.0.32",
+=======
+  "version": "0.0.33",
+>>>>>>> 9972e6a6cffad1875f20808a825761554b2a1ca7
   "description": "CSS framework to establish your favorite websites in mints, with user experience in mind.",
   "author": "Abdelrahman Ismail <abdelrahman3d@gmail.com>",
-  "main": "dist/css/blexar.css",
-  "style": "dist/css/blexar.css",
+  "main": "dist/blexar.css",
+  "style": "dist/blexar.css",
+  "repository": "https://github.com/baianat/blexar",
   "scripts": {
     "lint": "eslint ./src --fix",
     "build:extensions": "MODE=production node scripts/extensions",
@@ -26,13 +31,11 @@
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "chalk": "^2.3.2",
-    "del": "^3.0.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
-    "fs": "0.0.1-security",
     "mkdirp": "^0.5.1",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
