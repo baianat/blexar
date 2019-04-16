@@ -69,4 +69,4 @@ $red    = #E13C31
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017 [Baianat](http://baianat.com)
+Copyright (c) 2019 [Baianat](http://baianat.com)
