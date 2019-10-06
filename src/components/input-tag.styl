@@ -1,0 +1,57 @@
+.input-tag
+  display: inline-flex
+  padding: $padding ($padding * 1.5)
+  border-width: $border
+  border-style: solid
+  border-radius: $border-radius
+  vertical-align: top
+  text-align: center
+  border-color: $gray
+  background-color: $gray
+  line-height: $element-lineheight
+  color: $dark
+  white-space: nowrap
+  _icon-color: $dark
+
+  .icon:first-child:not(:last-child)
+    margin-{$dir-end}: ($padding * 0.5)
+
+  .icon:last-child:not(:first-child)
+    margin-{$dir-start}: ($padding * 0.5)
+
+  .icon:only-child
+    margin: 0 ($padding * -0.5)
+
+  >*:not(#blexar)
+    margin: 0
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    $textColor = isLight(color) ? $black : $white
+
+    &.is-{color}
+      border-color: $color
+      background-color: $color
+      color: $textColor
+      _icon-color: $textColor
+
+  &.is-rounded
+    border-radius: 10em
+
+  &.is-inverse
+    background-color: transparent
+
+  &.is-clean
+    position: relative
+    background-color: white
+    _icon-color: $gray
+    border-{$dir-end}: 0
+    margin-{$dir-end}: -2px
+
+  &.is-disabled
+    opacity: 0.9
+    cursor: not-allowed

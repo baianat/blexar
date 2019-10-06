@@ -1,0 +1,16 @@
+{
+  "name": "@blexar/dropdown",
+  "version": "0.0.0",
+  "description": "Blexar framework dropdown menu extension",
+  "author": "",
+  "main": "dist/js/dropdown.js",
+  "module": "dist/js/dropdown.esm.js",
+  "license": "MIT",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

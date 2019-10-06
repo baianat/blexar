@@ -1,0 +1,9 @@
+{
+  "name": "@blexar/switcher",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/switcher.js",
+  "module": "dist/switcher.esm.js",
+  "author": "",
+  "license": "MIT"
+}

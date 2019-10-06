@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../../dist/blexar.css">
+</head>
+
+<body style="padding: 50px 0 100px;">
+  <div class="container">
+    <header style="padding-bottom: 50px">
+      <h1>Blexar Table</h1>
+      <p>A table used to organize data</p>
+    </header>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Info</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tfoot>
+          <tr>
+            <th colspan="4">Total</th>
+          </tr>
+        </tfoot>
+
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+
+
+  <script>
+    
+    let names = ['Viper', 'Spectre', 'Luna', 'Barathrum', 'Lina', 'Phantom', 'Shaman', 'Riki', 'Meepo', 'Abaddon', 'Huskar', 'Kunkka', 'Sven'];
+    let info = 'Chaos Knight is a melee strength hero with one of the highest physical damage output ceilings of all heroes. He is mostly played as a carry and ganker. As his name implies, he has a theme based on randomness and uncertainty. His regular attack has an incredibly wide thirty damage spread, making his last hitting ability somewhat unreliable. Chaos Bolt is his most notorious luck-based ability which, at max level, can stun a target anywhere between a mediocre 2 seconds to an effective 4 seconds that will almost certainly assure the target death;'.split(' ');
+    function createCell (row, data) {
+      let cell = document.createElement('td');
+      cell.innerHTML = data;
+      row.appendChild(cell);
+    }
+  
+    function getRandom (max, min) {
+     return Math.floor(Math.random() * max) + min;
+    }
+
+    function getInfo () {
+      const max = info.length;
+      const count = getRandom(10, 2);
+      let output = '';
+      for (let i = 0; i < count; i++) {
+        output += info[getRandom(max, 0)] + ' ';
+      }
+      return output; 
+    }
+
+    let body = document.querySelector('.table >tbody');
+    for (var i = 0; i < 100; i++) {
+      let row = document.createElement('tr');
+      createCell(row, names[getRandom(names.length, 0)]);
+      createCell(row, getInfo());
+      createCell(row, getRandom(200, 0));
+      createCell(row, '');
+      body.appendChild(row);
+    }
+  </script>
+
+  <script src="dist/table.js"></script>
+  <script>
+    let table = new Table('.table', {
+      fixedHeader: true,
+      pagination: true,
+      sortable: true,
+      editable: true,
+      density: true,
+      perPage: 20
+    });
+    table.el.addEventListener('beforeEdit', (e) => console.log(e.detail));
+    table.el.addEventListener('afterEdit', (e) => console.log(e.detail));
+    
+  </script>
+</body>
+
+</html>

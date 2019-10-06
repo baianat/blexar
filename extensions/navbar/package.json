@@ -1,0 +1,10 @@
+{
+  "name": "@blexar/navbar",
+  "version": "0.0.0",
+  "description": "Adaptive navbar that move navbar elements to dropdown menu based on pre-order priorities.",
+  "main": "dist/navbar.js",
+  "keywords": [
+    "navbar"
+  ],
+  "license": "MIT"
+}

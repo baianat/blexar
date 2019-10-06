@@ -1,0 +1,13 @@
+{
+  "name": "@blexar/modal",
+  "version": "0.0.0",
+  "description": "Blexar framework modal extension",
+  "main": "dist/modal.js",
+  "module": "dist/modal.es.js",
+  "keywords": [
+    "modal",
+    "es6"
+  ],
+  "author": "",
+  "license": "MIT"
+}

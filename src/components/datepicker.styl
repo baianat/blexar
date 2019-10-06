@@ -1,0 +1,33 @@
+.datepicker
+  margin-bottom: $margin
+  padding: $padding multiple($padding, 1.5)
+  width: 100%
+  border: $border solid $black
+  border-radius: $border-radius
+  generateSizes()
+
+  &-control
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 0 $padding
+
+    select,
+    input
+      padding: 5px 10px
+      width: 50%
+      border-width: 0 0 $border 0
+      border-color: $white
+      color: $slategray
+      border-radius: 0
+      background-color: transparent
+      text-align: center
+      text-align-last: center
+      font-size: 0.8em
+      -webkit-appearance: none
+
+      &:hover,
+      &:focus
+        outline: 0
+        border-color: $black

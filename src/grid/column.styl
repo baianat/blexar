@@ -1,0 +1,75 @@
+.column
+  flex: 1 0 0
+  padding-right: $gutter
+  padding-left: $gutter
+
+  &[class*='is-tablet-'],
+  &[class*='is-desktop-'],
+  &[class*='is-widescreen-'],
+  &[class*='is-ultrawide-']
+    // we used flex basis auto to fix grid bug in ie
+    flex: 0 0 auto
+    // we used min-width with width property
+    // to stop FireFox default behavoir
+    // when content is bigger than column
+    min-width: 100%
+    width: 100%
+
+  for $n in (0 .. $columns)
+    &.is-{$n},
+    &.is-mobile-{$n}
+      min-width: round($n / $columns * 100%, $round-digits)
+      width: round($n / $columns * 100%, $round-digits)
+
+    &.is-offset-{$n},
+    &.is-offset-mobile-{$n}
+      margin-{$dir-start}: round($n / $columns * 100%, $round-digits)
+
+  +tablet()
+    for $n in (0 .. $columns)
+      &.is-tablet-{$n}
+        min-width: round($n / $columns * 100%, $round-digits)
+        width: round($n / $columns * 100%, $round-digits)
+
+      &.is-offset-tablet-{$n}
+        margin-{$dir-start}: round($n / $columns * 100%, $round-digits)
+
+  +desktop()
+    for $n in (0 .. $columns)
+      &.is-desktop-{$n}
+        min-width: round($n / $columns * 100%, $round-digits)
+        width: round($n / $columns * 100%, $round-digits)
+
+      &.is-offset-desktop-{$n}
+        margin-{$dir-start}: round($n / $columns * 100%, $round-digits)
+
+  +widescreen()
+    for $n in (0 .. $columns)
+      &.is-widescreen-{$n}
+        min-width: round($n / $columns * 100%, $round-digits)
+        width: round($n / $columns * 100%, $round-digits)
+
+      &.is-offset-widescreen-{$n}
+        margin-{$dir-start}: round($n / $columns * 100%, $round-digits)
+
+  +ultrawide()
+    for $n in (0 .. $columns)
+      &.is-ultrawide-{$n}
+        min-width: round($n / $columns * 100%, $round-digits)
+        width: round($n / $columns * 100%, $round-digits)
+
+      &.is-offset-ultrawide-{$n}
+        margin-{$dir-start}: round($n / $columns * 100%, $round-digits)
+
+  &.is-middle
+    align-self: center
+
+  &.is-top
+    align-self: flex-start
+
+  &.is-bottom
+    align-self: flex-end
+
+  >.row
+    margin: 0 ($gutter * -1)
+    min-width: 'calc(100% + %s)' % ($gutter * 2)

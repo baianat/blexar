@@ -1,0 +1,116 @@
+.table
+  overflow: hidden
+  width: 100%
+  border-spacing: 0
+  border-collapse: separate
+  border-radius: $border-radius-large
+  overflow: hidden
+  color: $black
+  text-align: $dir-start
+
+  &:not(:last-child)
+    margin-bottom: $margin
+
+
+  thead
+    font-weight: $font-weight-bold
+    th
+      border-top: 0
+      border-bottom: $border solid $gray
+  tfoot
+    th
+      border-top: $border solid $gray
+      padding: ($padding * 2) $padding
+
+  td,
+  th
+    padding: ($padding * 2) $padding
+    border-top: $border solid $gray
+
+  // generate size modifiers
+  generateSizes()
+
+  &.is-striped
+    tbody tr:nth-of-type(odd)
+      background-color: $light
+
+  &.is-bordered
+    border: $border solid $gray
+    th,
+    td
+      &:not(:last-child)
+        border-{$dir-end}: $border solid $gray
+
+  &.is-clean
+    td
+      border-top: 0
+  &.is-hoverable
+    tr:hover
+      background-color: $light
+
+  &.is-center
+    text-align: center
+
+  &.is-top tbody
+    vertical-align: top
+
+  &.is-bottom tbody
+    vertical-align: bottom
+
+  &.is-middle tbody
+    vertical-align: middle
+
+  &.is-header-centerd
+    th
+      text-align: center
+  &.is-header-highlighted
+    th
+      background-color: $light
+
+  &.is-mobile-colapsed
+    th, td
+      &:not(:last-child)
+        +mobile()
+          border-right: 0
+      +mobile()
+        display: block
+        width: 100%
+    thead
+      th
+        +mobile()
+          border-bottom: 0
+    tr
+      +mobile()
+        display: block
+        border-top: $border solid $gray
+
+    td
+      +mobile()
+        border: 0
+
+  tr
+    for color in $modifiers-color
+      $accent = lookup('$' + color)
+      $text = isLight(color) ? $black : $white
+      &.is-{color}
+      &.is-{color}:hover
+        background-color: $accent
+        color: $text
+.table-responsive
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+
+.table-sort
+  float: right
+  padding: 0
+  outline: 0
+  background: none
+  border: none
+
+  &.is-active
+    fill: $primary
+    stroke: $primary
+
+  &.is-desc
+    transform: scaleY(-1)

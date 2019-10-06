@@ -1,0 +1,56 @@
+/**
+ * media queries mixins
+ */
+
+responsive(breakpoint)
+  @media screen and (min-width: breakpoint)
+    {block}
+
+ultrawide()
+  @media screen and (min-width: $ultrawide)
+    {block}
+
+widescreen()
+  @media screen and (min-width: $widescreen)
+    {block}
+
+desktop()
+  @media screen and (min-width: $desktop)
+    {block}
+
+tablet()
+  @media screen and (min-width: $tablet)
+    {block}
+
+mobile()
+  @media screen and (max-width: (($tablet - 1)))
+    {block}
+
+
+/**
+ * modifiers mixins
+ */
+
+$tiny
+  font-size $size-tiny
+$small
+  font-size $size-small
+$normal
+  font-size $size-normal
+$large
+  font-size $size-large
+$massive
+  font-size $size-massive
+
+generateSizes()
+  &.is-tiny
+    @extends $tiny
+  &.is-small
+    @extends $small
+  &,
+  &.is-normal
+    @extends $normal
+  &.is-large
+    @extends $large
+  &.is-massive
+    @extends $massive

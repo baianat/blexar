@@ -1,0 +1,43 @@
+.input
+  margin-bottom: $margin
+  padding: $padding ($padding * 1.5)
+  width: 100%
+  outline: none
+  border-width: $border
+  border-style: solid
+  border-radius: $border-radius
+  background-color: $white
+  line-height: $element-lineheight
+  -webkit-appearance: none
+  -moz-appearance: none
+  _input-color: $gray $dark
+  &:focus
+    z-index: 1
+
+  // generate size modifiers
+  generateSizes()
+
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = lookup('$' + color)
+    &.is-{color}
+      _input-color: $color
+
+  &.is-block
+    width: 100%
+
+  &.is-rounded
+    border-radius: 10em
+
+  &.is-bold
+    border-width: 2px
+  &:disabled,
+  &.is-disabled
+    cursor: not-allowed
+    background: $gray
+
+  &.is-disabled
+    pointer-events: none
+
+  &[type="color"]
+    padding: 0

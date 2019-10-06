@@ -1,0 +1,68 @@
+.buttons
+  display: inline-flex
+  flex-wrap: wrap
+  align-items: center
+  margin-bottom: $margin
+
+  >:not(:last-child), >.is-rounded:not(:last-child), &.is-rounded >:not(:last-child)
+    border-top-{$dir-end}-radius: 0
+    border-bottom-{$dir-end}-radius: 0
+
+  >:not(:first-child), >.is-rounded:not(:first-child), &.is-rounded >:not(:first-child)
+    border-top-{$dir-start}-radius: 0
+    border-bottom-{$dir-start}-radius: 0
+
+  >.button
+    margin-bottom: 0
+    margin-{$dir-end}: 0
+
+  .button + .button
+    border-{$dir-start}: 0
+    margin-{$dir-start}: 0
+
+  &.is-block
+    flex-wrap: nowrap
+
+  &.is-gradient
+    border-radius: $border-radius
+
+    >.button
+      background-color: transparent
+      border: 0
+
+  &.is-rounded
+    border-radius: 10em
+
+  // generate all modifiers
+  for color in $modifiers-color
+    &.is-{color}
+      >.button
+        @extend .button.is-{color}
+
+    &.is-{color}.is-outlined
+      >.button
+        @extend .button.is-{color}.is-outlined
+
+    &.is-{color}.is-bright
+      >.button
+        @extend .button.is-{color}.is-bright
+
+  for color in $modifiers-color-grad
+    $grad = lookup('$grad-' + color)
+
+    &.is-{color}.is-gradient
+      background-image: linear-gradient($grad-direction, $grad[0], $grad[1])
+
+  for size in $modifiers-size
+    &.is-{size}
+      >.button
+        @extend .button.is-{size}
+
+  for style in $modifiers-style
+    &.is-{style}
+      >.button
+        @extend .button.is-{style}
+
+  &[disabled]
+    >.button
+      @extend .button[disabled]

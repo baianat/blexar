@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>blexar modal</title>
+    <link rel="stylesheet" href="../../dist/blexar.css">
+  </head>
+  <body style="padding: 50px 0 100px;">
+    <div class="container">
+      <header style="padding-bottom: 50px">
+        <h1>Blexar Modal</h1>
+        <p>A modal displays content that temporarily blocks interactions with the main view of a site</p>
+      </header>
+      <div class="grid is-12">
+        <div class="column">
+          <h2>Default</h2>
+        </div>
+        <div class="column">
+          <button class="button" data-blexar-modal="#default">Default modal</button>
+        </div>
+        <div class="column">
+          <button class="button is-success" data-blexar-modal="#success">Success modal</button>
+        </div>
+        <div class="column">
+          <button class="button is-danger" data-blexar-modal="#danger">Danger modal</button>
+        </div>
+        <div class="column">
+          <button class="button is-warning" data-blexar-modal="#warning">Warning modal</button>
+        </div>
+        <div class="column">
+          <button class="button is-dark" data-blexar-modal="#black">Black modal</button>
+        </div>
+        <div class="column">
+          <h2>Outline</h2>
+        </div>
+        <div class="column">
+          <button class="button is-inverse" data-blexar-modal="#outline">Outline</button>
+        </div>
+        <div class="column">
+          <button class="button is-success is-inverse" data-blexar-modal="#outlineSuccess">Outline Success</button>
+        </div>
+        <div class="column">
+          <button class="button is-danger is-inverse" data-blexar-modal="#outlineDanger">Outline Danger</button>
+        </div>
+        <div class="column">
+          <button class="button is-warning is-inverse" data-blexar-modal="#outlineWarning">Outline Warning</button>
+        </div>
+        <div class="column">
+          <button class="button is-dark is-inverse" data-blexar-modal="#outlineBlack">Outline Black</button>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="default">
+        <div class="modal">
+          <div class="modal-panel">
+              <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Hi I'm a modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="success">
+        <div class="modal is-success">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="danger">
+        <div class="modal is-danger">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="warning">
+        <div class="modal is-warning">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="black">
+        <div class="modal is-dark">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outline">
+        <div class="modal is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outlineSuccess">
+        <div class="modal is-success is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outlineDanger">
+        <div class="modal is-danger is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outlineWarning">
+        <div class="modal is-warning is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outlineBlack">
+        <div class="modal is-dark is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-container is-hidden" id="outline">
+        <div class="modal is-outline">
+          <div class="modal-panel">
+            <a class="modal-dismiss">X</a>
+            <div class="modal-header">
+              <h2 class="modal-title">Clear modal</h2>
+            </div>          
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam deleniti, voluptatum suscipit molestiae dolorum
+                quia inventore soluta ullam cumque fuga.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="button is-success" href="">Ok</a>
+              <a class="button is-danger is-inverse" href="">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="dist/modal.js"></script>
+    <script>
+
+      Array.from(document.querySelectorAll('[data-blexar-modal]')).forEach((button) => {
+        new Modal(document.querySelector(button.dataset.blexarModal), button);
+      });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.tabs
+  display: flex
+  list-style: none
+  margin: 0
+  padding: ($padding * 2) 0
+  border-bottom: 1px solid $gray
+  li
+    margin: 0
+  a
+    border-top-right-radius: $border-radius
+    border-top-left-radius: $border-radius
+    padding: ($padding * 2)
+    background-color: $white
+    color: $slategray
+    _icon-color: $slategray
+  .icon
+    margin-right: 0
+
+  .is-active a
+  a:hover
+    border-bottom: 2px solid $primary
+    color: $primary
+    _icon-color: $primary
+
+  &.is-centered
+    justify-content: center
+  &.is-end
+    justify-content: flex-end
+
+  &.is-boxed
+    a
+      border: 1px solid transparent
+      border-bottom: 0
+    .is-active a
+    a:hover
+      border: 1px solid $gray
+      border-bottom-color: transparent

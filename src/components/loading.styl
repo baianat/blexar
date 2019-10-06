@@ -1,0 +1,37 @@
+.loading-spinner
+.is-loading
+  position: relative
+  pointer-events: none
+  user-select: none
+  &:after
+    position: absolute
+    z-index: 9999
+    content: ''
+    display: block
+    width: 0.7em
+    height: 0.7em
+    top: calc(50% - (1em / 2))
+    left: calc(50% - (1em / 2))
+    border-radius: 2em
+    border-width: 0.15em
+    border-top-color: transparent
+    border-right-color: transparent
+    border-bottom-color: $primary
+    border-left-color: $primary
+    border-style: solid
+    animation: spinner-rotation 750ms infinite
+    animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55)
+
+.loading-spinner
+  width: 0.7em
+  height: 0.7em
+
+.is-loading
+  color: transparent !important
+  fill: transparent !important
+  // generate color modifiers
+  for color in $modifiers-color
+    $color = isLight(color) ? $black : $white
+    &.is-{color}:after
+      border-bottom-color: $color
+      border-left-color: $color

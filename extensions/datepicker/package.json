@@ -1,0 +1,12 @@
+{
+  "name": "@blexar/datepicker",
+  "main": "dist/datepicker.js",
+  "module": "dist/datepicker.esm.js",
+  "version": "0.0.0",
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

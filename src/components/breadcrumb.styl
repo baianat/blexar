@@ -1,0 +1,22 @@
+.breadcrumb
+  display: flex
+  list-style: none
+  margin: 0
+  padding: 0
+  // generate size modifiers
+  generateSizes()
+
+  li
+    margin-top: 0
+
+.breadcrumb-divider
+  padding: 0 $padding
+  color: $gray
+  _icon-color: $gray
+
+.breadcrumb-item
+  color: $primary
+
+  &.is-active
+    color: $slategray
+    font-weight: $font-weight-semi-bold

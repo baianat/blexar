@@ -1,0 +1,16 @@
+{
+  "name": "eidtor",
+  "version": "0.0.1",
+  "description": "ES6 select",
+  "main": "dist/select.js",
+  "dependencies": {},
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+.input-group
+  display: flex
+  margin-bottom: $margin
+  >:not(:last-child)
+  >.is-rounded:not(:last-child)
+  &.is-rounded >:not(:last-child)
+    border-top-{$dir-end}-radius: 0
+    border-bottom-{$dir-end}-radius: 0
+  >:not(:first-child)
+  >.is-rounded:not(:first-child)
+  &.is-rounded >:not(:first-child)
+    border-top-{$dir-start}-radius: 0
+    border-bottom-{$dir-start}-radius: 0
+  >*
+  >.button
+    margin: 0
+  .input + .input
+    margin-{$dir-start}: -1px;
+  
+
+  // generate all modifiers
+  for color in $modifiers-color
+    &.is-{color}
+      >.button
+        @extends .button.is-{color}
+      >.input
+        @extends .input.is-{color}
+      >.input-tag
+        @extends .input-tag.is-{color}
+
+  for size in $modifiers-size
+    &.is-{size}
+      >.button
+        @extends .button.is-{size}
+      >.input
+        @extends .input.is-{size}
+      >.input-tag
+        @extends .input-tag.is-{size}
+
+  for style in $modifiers-style
+    &.is-{style}
+      >.button
+        @extends .button.is-{style} !optional
+      >.input
+        @extends .input.is-{style} !optional
+      >.input-tag
+        @extends .input-tag.is-{style} !optional

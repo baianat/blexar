@@ -1,0 +1,9 @@
+{
+  "name": "@blexar/slider",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/slider.js",
+  "module": "dist/slider.esm.js",
+  "keywords": [],
+  "license": "MIT"
+}

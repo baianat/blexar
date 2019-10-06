@@ -1,0 +1,8 @@
+.*
+Icon/r
+node_modules
+*/**/node_modules
+yarn.lock
+*/**/src
+*/**/index.html
+_utils

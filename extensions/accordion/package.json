@@ -1,0 +1,15 @@
+{
+  "name": "@blexar/accordion",
+  "version": "0.0.0",
+  "description": "Blexar framework accordion extension",
+  "main": "dist/accordion.js",
+  "module": "dist/accordion.esm.js",
+  "author": "",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Abdelrahman3D",
+      "email": "abdelrahman3d@gmail.com"
+    }
+  ]
+}

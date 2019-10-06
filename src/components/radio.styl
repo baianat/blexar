@@ -1,0 +1,16 @@
+.radio
+  @extends .checkbox
+
+  &-input
+    border-radius: 10em
+
+    &:after
+      width: 30%
+      height: 30%
+      border: none
+      border-radius: 10em
+      background: $white
+      transform: none
+
+input.radio
+  @extends .radio-input

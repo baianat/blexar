@@ -1,0 +1,49 @@
+.input-icons
+  position: relative
+  margin-bottom: $margin
+
+  &.has-icons-after
+    .input
+      padding-{$dir-end}: 2.5em
+
+  &.has-icons-before
+    .input
+      padding-{$dir-start}: 2.5em
+
+  .input
+    margin-bottom: 0
+
+  .is-before, .is-after
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    fill: $gray
+
+  .is-after
+    {$dir-end}: 0.75em
+
+  .is-before
+    {$dir-start}: 0.75em
+
+  .input:focus ~ *
+    fill: currentColor
+
+  for color in $modifiers-color
+    $accentColor = lookup('$' + color)
+
+    &.is-{color}
+      color: $accentColor
+
+      >.input
+        @extend .input.is-{color}
+
+      >.icon
+        @extend .icon.is-{color} !optional
+
+  for size in $modifiers-size
+    &.is-{size}
+      >.input
+        @extend .input.is-{size} !optional
+
+      >.icon
+        @extend .icon.is-{size} !optional

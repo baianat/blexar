@@ -1,0 +1,71 @@
+/**
+ * check if the color name is a light color
+ */
+
+isLight(color) {
+  if (color == 'white' || color == 'light' || color == 'gray' || color == 'warning') {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * convert values to rem
+ */
+
+toRem(value) {
+    u = unit(value);
+    if (u is 'px') {
+        return unit(value/16, 'rem');
+    } else {
+        return unit(value, u);
+    }
+}
+
+
+/**
+ * get box shadow
+ */
+boxShadow() {
+  return 0 6px 20px alpha($dark, 10%)
+}
+ 
+
+/**
+ * Generate font sizes, based on equation
+ * 
+ * F(n) = f(n - 1) + { floor((n - 2) / 4) + 1 } * 2
+ *
+ * | index | px |  rem  |
+ * |-------|----|-------|
+ * |   0   | 12 | 0.750 |
+ * |   1   | 14 | 0.875 |
+ * |   2   | 16 | 1     |
+ * |   3   | 18 | 1.125 |
+ * |   4   | 20 | 1.25  |
+ * |   5   | 24 | 1.5   |
+ * |   6   | 28 | 1.75  |
+ * |   7   | 32 | 2     |
+ * |   8   | 36 | 2.25  |
+ * |   9   | 42 | 2.625 |
+ * |   10  | 48 | 3     |
+ * |   11  | 54 | 3.375 |
+ * |   12  | 60 | 3.75  |
+ * |   13  | 68 | 4.25  |
+ * |   14  | 76 | 4.75  |
+ * 
+ */
+
+generateFontSizes() {
+  current = 12;
+  sizes = ();
+  max = 16;
+  for $n in (1...max) {
+    increas = (floor(($n - 2) / 4) + 1) * 2
+    current = current + increas;
+    px = unit(current, 'px');
+    rem = toRem(px);
+    push(sizes, rem);
+  }
+  return sizes;
+}

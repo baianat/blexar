@@ -1,0 +1,9 @@
+{
+  "name": "@blexar/table",
+  "version": "0.0.0",
+  "description": "Blexar framework table extension.",
+  "main": "dist/table.js",
+  "modules": "dist/table.js",
+  "author": "",
+  "license": "MIT"
+}
