@@ -12,6 +12,7 @@ const mkdirp = promisify(mkdirpNode);
 const isProduction = process.env.MODE === 'production';
 
 async function buildScripts (format, ext) {
+try {
   console.log(chalk.cyan(`📦  Generating ${format} ${ext}...`));
 
   // get the rollup bundle.
@@ -39,6 +40,9 @@ async function buildScripts (format, ext) {
   if (!isProduction || format !== 'umd') return;
   filePath = path.join(`extensions/${ext}/dist/`, `${ext}.min.js`);
   fs.writeFileSync(filePath, uglify(code, script.uglifyOptions).code);
+} catch (err) {
+    console.log(chalk.red(`📦 Error While Generating ${err}...`));
+}
 }
 
 extensions.forEach(ext => {
