@@ -11,10 +11,14 @@ const mkdirp = promisify(mkdirpNode);
 const isProduction = process.env.MODE === 'production';
 
 async function buildStyles () {
+try {
   console.log(chalk.cyan(`📦  Generating Stylesheets...`));
   const app = fs.readFileSync(`blexar.styl`, 'utf8');
   await mkdirp('dist');
   stylusToCSS(app);
+} catch (err) {
+  console.log(chalk.red(`📦 Errors While Generating...: ${err}...`));
+}
 }
 
 function stylusToCSS (styl) {
